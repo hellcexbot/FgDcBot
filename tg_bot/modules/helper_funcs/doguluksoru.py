@@ -34,4 +34,8 @@ DOGRU_SR_TEXT = ["Telefonunda en son aradığın şey neydi?","Birisi kız arkad
 				 "Hiç bir dersten başarısız oldun mu?","Hiç kopya çektin mi?","Hiç sınıfta uyudun mu?","Sınıfta asla yanında oturmak istemeyeceğin kim?",
 				 "Derse hiç geç kaldın mı?","Bir öğretmenin önünde yaptığın en utanç verici şey nedir?","Hiç masanın altına sakız attın mı?",
 				 "Hiç okulda kavga ettin mi?","Bir sınavdan aldığın en kötü puan neydi?","Sınıfta hiç uyuya kaldın mı?","Hiç gözaltına alındın mı?",
-				 "Eğer görünmez olsaydın hangi derse gizlice girerdin?","En kötü grup hangisidir?"]
+				 "Eğer görünmez olsaydın hangi derse gizlice girerdin?","En kötü grup hangisidir?","Bu grupdaki sır tutma  konusunda en çok zorlanan kişi kimdir?",
+				 "Söylediğin en son yalan neydi?","Spor yapar mısın?","Hayatının geri kalanında sadece bir kıyafet giyebilseydin, bu kıyafetin hangi renk olurdu?",
+				 "Sizce Türkiye’nin eğitim sisteminde yapılması gereken en önemli değişiklik nedir?","Karanlıktan/yükseklikten korkar mısın?",
+				 "Kendi görünuşünü 1 ile 10 arasında puanla :)","Yaptıgın en yasadışı şey neydi?","Şimdi sana bir evlenme teklifi gelse ve sevmediğin biri olsa, ve bu sana son gelecek evlilik teklifi olsa kabul edermiydin?",
+				 "Şu anki ruh haline bakarak ne tür film izlersin (aksiyon/dram/bilim kurgu/romantik komedi/biyografi/fantastik)"]
