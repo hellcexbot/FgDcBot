@@ -1,0 +1,59 @@
+{
+  "logo": "https://i.hizliresim.com/VuMLF7.jpg",
+  "name": "FireqanQHelpBot",
+  "description": "by coder ==> t.me/fireganqQ!",
+  "keywords": [
+    "telegram",
+    "best",
+    "group",
+    "manager",
+    "3"
+  ],
+  "repository": "https://github.com/fireganqQ/FgDcBot",
+  "env": {
+    "ENV": {
+      "description": "Bunu HERHANGİ BİR ŞEY olarak ayarlamak, ortam değişkenlerini etkinleştirir",
+      "value": "ANYTHING"
+    },
+    "TOKEN": {
+      "description": "Bir dizge olarak bot jetonunuz.",
+      "value": ""
+    },
+    "OWNER_ID": {
+      "description": "Sahip kimliğinizden oluşan bir tam sayı",
+      "value": "1340915968"
+    },
+    "OWNER_USERNAME": {
+      "description": "Kullanıcı adınızı",
+      "value": "fireganqQ"
+    },
+    "WEBHOOK": {
+      "description": "Bunu HERHANGİ BİR ŞEY olarak ayarlamak, ortam modu mesajlarındayken web kancalarını etkinleştirir.",
+      "value": "ANYTHING"
+    },
+    "URL": {
+      "description": "Şuna benzer Heroku Uygulama URL'si",
+      "value": "https://appname.herokuapp.com/"
+    },
+    "MESSAGE_DUMP": {
+      "description": "isteğe bağlı: kişilerin eski mesajlarını silmelerini önlemek için yanıtladığınız kayıtlı mesajların saklandığı bir sohbet",
+      "value": "-411734258"
+    },
+    "PORT": {
+      "description": "Web kancalarınız için kullanılacak bağlantı noktası",
+      "value": "8443"
+    },
+    "ALLOW_EXCL": {
+      "description": "Ünlem işareti kullanımına izin verilip verilmeyeceği! / yanı sıra komutlar için.",
+      "value": "True"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "10"
+      }
+    }]
+
+}
