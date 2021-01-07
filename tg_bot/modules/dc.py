@@ -55,12 +55,13 @@ def button(bot, update):
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         msg.reply_text(text=f"{user.first_name} İçin Doğruluk Sorusu Getiriliyor...")
-        sleep(60)
+        sleep(2.5)
         msg.reply_text(text=f"{random.choice(DOGRU_SR_TEXT)}")
     if query.data == "2":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id, text=f"{user.first_name} İçin Cesaret Sorusu Getiriliyor...")
+        sleep(2.5)
         bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
 
 dc_handler = CommandHandler("dc", dc)
