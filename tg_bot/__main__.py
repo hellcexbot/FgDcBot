@@ -95,7 +95,7 @@ def start(bot: Bot, update: Update):
                                            [InlineKeyboardButton(text="📢 Duyuru Kanalım",
                                                                  url="t.me/fireqanQBotlari")],
                                            [InlineKeyboardButton(text="🤖 Beni Gruba Ekle",
-                                                                 url="tg://resolve?domain=dsqqwebot&startgroup=a")],
+                                                                 url="tg://resolve?domain=FgDc_Bot&startgroup=a")],
                                            [InlineKeyboardButton(text="🍾 Oyun Grubumuz",
                                                                  url="t.me/FgDcBotGrup")],
                                            [InlineKeyboardButton(text="👮‍♂️ Sahibim",
