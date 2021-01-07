@@ -79,7 +79,7 @@ def __migrate__(old_chat_id, new_chat_id):
 
 @run_async
 def admin_help(bot, update):
-    update.effective_message.replay_text(HELP_TEXT)
+    update.effective_message.reply_text(HELP_TEXT)
 
 BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(1340915968))
 USER_HANDLER = MessageHandler(Filters.all & Filters.group, log_user)
