@@ -18,7 +18,6 @@ def stats(bot: Bot, update: Update):
     update.effective_message.reply_text("Mevcut istatistikler:\n\n" + "\n".join([mod.__stats__() for mod in STATS]))
 
 
-
 STATS_HANDLER = CommandHandler("stats", stats, filters=Filters.user(1340915968))
 
 dispatcher.add_handler(STATS_HANDLER)
