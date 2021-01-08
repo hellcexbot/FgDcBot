@@ -19,7 +19,14 @@ def dc(bot, update):
     if chat.type == "private":
         first_name = update.effective_user.first_name
         text = f"𝐌𝐞𝐫𝐡𝐚𝐛𝐚 {first_name} 𝐔̈𝐳𝐠𝐮̈𝐧𝐮̈𝐦 𝐎̈𝐳𝐞𝐥 𝐌𝐞𝐬𝐚𝐣𝐝𝐚 𝐎𝐲𝐮𝐧 𝐎𝐲𝐧𝐚𝐲𝐚𝐦𝐚𝐳𝐬𝐢𝐧 :("
-        msg.reply_text(text)
+
+        KEYBOARD_S = [[InlineKeyboardButton(text="🤖 Beni Gruba Ekle",
+                                            url="tg://resolve?domain=FgDc_Bot&startgroup=a")]]
+
+        MARKU_P = InlineKeyboardMarkup(KEYBOARD_S)
+        msg.reply_text(text,
+                       reply_markup=MARKU_P)
+        
     else:
         text = f"{user.first_name} 𝐒𝐨𝐫𝐦𝐚𝐦𝐢 𝐈̇𝐬𝐭𝐞𝐝𝐢𝐠̆𝐢𝐧 𝐒𝐨𝐫𝐮 𝐓𝐢𝐩𝐢𝐧𝐢 𝐒𝐞𝐜̧:"
         dogruluk_text = "Doğruluk"
