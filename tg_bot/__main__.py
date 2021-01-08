@@ -2,7 +2,6 @@ import importlib
 import re
 from typing import Optional, List
 
-
 from telegram import Message, Chat, Update, Bot, User
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, ChatMigrated, TelegramError
@@ -29,15 +28,15 @@ Kullanılabilir komutların listesini /help ile bulabilirsiniz.
 """
 
 HELP_STRINGS = """
-Selam {}!
+𝐒𝐞𝐥𝐚𝐦 {}!
 
-Komutlar:
+𝐊𝐨𝐦𝐮𝐭𝐥𝐚𝐫:
  - /start: botu başlat
  - /help: Size bu mesajı atar.
  - /dc: Size Doğruluk Veya Cesaret Sorusu Seçimi Yaptırı
  - /sahip: Sahibimi, Duyuru Kanalımı Ve Sahibimin Blog Kanalını Verir
-
-‼️ **dc Komutu Pm'de Calişmaz :(**
+ - /stat: Bottaki Toplam Soru Sayısı Ve Versiyonunu Verir
+‼️ /dc 𝐊𝐨𝐦𝐮𝐭𝐮 𝐏𝐦'𝐝𝐞 𝐂𝐚𝐥𝐢𝐬̧𝐦𝐚𝐳 :(
 """
 
 IMPORTED = {}
