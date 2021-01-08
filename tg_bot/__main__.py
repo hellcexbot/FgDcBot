@@ -113,7 +113,8 @@ def get_help(bot: Bot, update: Update):
     user_id = user.id
     msg = update.effective_message
 
-    msg.reply_text(HELP_STRINGS.format(first_name, user_id))
+    msg.reply_text(HELP_STRINGS.format(first_name, user_id),
+                    parse_mode=ParseMode.MARKDOWN)
 
 
 
