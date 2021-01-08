@@ -27,11 +27,11 @@ def sahip(bot: Bot, update: Update):
     if chat.type != chat.PRIVATE:
         text = "Sahibim, Sahibimin Kanalları Ve Güncelleme V.b. Duyuru Kanallıma Aşağıdaki Butonlardan Ulaşa Bilirsiniz:)"
         msg.reply_text(text,
-                          reply_markup=InlineKeyboardMarkup(KEYBOARDS)
+                          reply_markup=InlineKeyboardMarkup(KEYBOARDS))
     else:
         text = "Sahibim, Sahibimin Kanalları Ve Güncelleme V.b. Duyuru Kanallıma Aşağıdaki Butonlardan Ulaşa Bilirsiniz:)"
         msg.reply_text(text,
-                          reply_markup=InlineKeyboardMarkup(KEYBOARDS)
+                          reply_markup=InlineKeyboardMarkup(KEYBOARDS))
 
 sahip_handler = CommandHandler("sahip", sahip)
 dispatcher.add_handler(sahip_handler)
