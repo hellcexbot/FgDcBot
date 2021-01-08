@@ -18,17 +18,8 @@ def dc(bot, update):
     #SORU1 = msg.reply_text(random.choice(SORULAR_TEXT1))
     if chat.type == "private":
         first_name = update.effective_user.first_name
-        text = f"{first_name} Sormamı İstediğin Soru Tipini Seç:"
-        dogruluk_text = "Doğruluk"
-        cesaret_text = "Cesaret"
-        msg.reply_text(text,
-                        reply_markup=InlineKeyboardMarkup([
-                                        [InlineKeyboardButton(text=dogruluk_text,
-                                                                message_id=msg.message_id,
-                                                                callback_data="1")],
-                                        [InlineKeyboardButton(text=cesaret_text,
-                                                                message_id=msg.message_id,
-                                                                callback_data="2")]]))
+        text = f"**Merhaba {first_name} Üzgünüm Özel Mesajda Oyun Oynayamazsın :(**"
+        msg.reply_text(text)
     else:
         text = f"{user.first_name} Sormamı İstediğin Soru Tipini Seç:"
         dogruluk_text = "Doğruluk"
