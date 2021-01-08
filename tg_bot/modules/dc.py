@@ -22,8 +22,8 @@ def dc(bot, update):
         text += "\n**Yeni Özelliğimizi Sevmediyseniz Botu Geliştirmemiz İçin Alttaki Button dan Oylamaya Katıla Bilirsin!**"
         KEYBOARD_S = [[InlineKeyboardButton(text="🤖 Beni Gruba Ekle",
                                             url="tg://resolve?domain=FgDc_Bot&startgroup=a")]]
-        KEYBOARD_S += [InlineKeyboardButton(text="📊 Oylamaya Katılmak İçin Tıkla",
-                                              url="https://t.me/fireqanQBotlari/10")]
+        KEYBOARD_S += [[InlineKeyboardButton(text="📊 Oylamaya Katılmak İçin Tıkla",
+                                              url="https://t.me/fireqanQBotlari/10")]]
 
         MARKU_P = InlineKeyboardMarkup(KEYBOARD_S)
         msg.reply_text(text,
