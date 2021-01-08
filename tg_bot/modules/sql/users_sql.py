@@ -5,7 +5,6 @@ from sqlalchemy import Column, Integer, UnicodeText, String, ForeignKey, UniqueC
 from tg_bot import dispatcher
 from tg_bot.modules.sql import BASE, SESSION
 
-
 class Users(BASE):
     __tablename__ = "users"
     user_id = Column(Integer, primary_key=True)
