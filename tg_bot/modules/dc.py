@@ -26,15 +26,16 @@ def dc(bot, update):
         MARKU_P = InlineKeyboardMarkup(KEYBOARD_S)
         msg.reply_text(text,
                        reply_markup=MARKU_P)
-        
+
     else:
-        text = f"{user.first_name} 𝐒𝐨𝐫𝐦𝐚𝐦𝐢 𝐈̇𝐬𝐭𝐞𝐝𝐢𝐠̆𝐢𝐧 𝐒𝐨𝐫𝐮 𝐓𝐢𝐩𝐢𝐧𝐢 𝐒𝐞𝐜̧:"
+        text = f"[{user.first_name}](tg://user?id={user.id}) 𝐒𝐨𝐫𝐦𝐚𝐦𝐢 𝐈̇𝐬𝐭𝐞𝐝𝐢𝐠̆𝐢𝐧 𝐒𝐨𝐫𝐮 𝐓𝐢𝐩𝐢𝐧𝐢 𝐒𝐞𝐜̧:"
         dogruluk_text = "Doğruluk"
         cesaret_text = "Cesaret"
         msg.reply_text(text,
                         reply_markup=InlineKeyboardMarkup([
                                         [InlineKeyboardButton(text=dogruluk_text,
                                                                 message_id=msg.message_id,
+                                                                parse_mode=ParseMode.MARKDOWN
                                                                 callback_data="1")],
                                         [InlineKeyboardButton(text=cesaret_text,
                                                                 message_id=msg.message_id,
