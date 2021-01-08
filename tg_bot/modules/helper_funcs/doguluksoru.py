@@ -39,3 +39,4 @@ DOGRU_SR_TEXT = ["Telefonunda en son aradığın şey neydi?","Birisi kız arkad
 				 "Sizce Türkiye’nin eğitim sisteminde yapılması gereken en önemli değişiklik nedir?","Karanlıktan/yükseklikten korkar mısın?",
 				 "Kendi görünuşünü 1 ile 10 arasında puanla :)","Yaptıgın en yasadışı şey neydi?","Şimdi sana bir evlenme teklifi gelse ve sevmediğin biri olsa, ve bu sana son gelecek evlilik teklifi olsa kabul edermiydin?",
 				 "Şu anki ruh haline bakarak ne tür film izlersin (aksiyon/dram/bilim kurgu/romantik komedi/biyografi/fantastik)"]
+
