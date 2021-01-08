@@ -19,8 +19,11 @@ def dc(bot, update):
     if chat.type == "private":
         text = f"𝐌𝐞𝐫𝐡𝐚𝐛𝐚 [{user.first_name}](tg://user?id={user.id}) 𝐔̈𝐳𝐠𝐮̈𝐧𝐮̈𝐦 𝐎̈𝐳𝐞𝐥 𝐌𝐞𝐬𝐚𝐣𝐝𝐚 𝐎𝐲𝐮𝐧 𝐎𝐲𝐧𝐚𝐲𝐚𝐦𝐚𝐳𝐬𝐢𝐧 :("
 
+        text += "\n**Yeni Özelliğimizi Sevmediyseniz Botu Geliştirmemiz İçin Alttaki Button dan Oylamaya Katıla Bilirsin!**"
         KEYBOARD_S = [[InlineKeyboardButton(text="🤖 Beni Gruba Ekle",
                                             url="tg://resolve?domain=FgDc_Bot&startgroup=a")]]
+        KEYBOARD_S += [InlineKeyboardButton(text="📊 Oylamaya Katılmak İçin Tıkla",
+                                              url="https://t.me/fireqanQBotlari/10")]
 
         MARKU_P = InlineKeyboardMarkup(KEYBOARD_S)
         msg.reply_text(text,
