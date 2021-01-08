@@ -38,5 +38,9 @@ DOGRU_SR_TEXT = ["Telefonunda en son aradığın şey neydi?","Birisi kız arkad
 				 "Söylediğin en son yalan neydi?","Spor yapar mısın?","Hayatının geri kalanında sadece bir kıyafet giyebilseydin, bu kıyafetin hangi renk olurdu?",
 				 "Sizce Türkiye’nin eğitim sisteminde yapılması gereken en önemli değişiklik nedir?","Karanlıktan/yükseklikten korkar mısın?",
 				 "Kendi görünuşünü 1 ile 10 arasında puanla :)","Yaptıgın en yasadışı şey neydi?","Şimdi sana bir evlenme teklifi gelse ve sevmediğin biri olsa, ve bu sana son gelecek evlilik teklifi olsa kabul edermiydin?",
-				 "Şu anki ruh haline bakarak ne tür film izlersin (aksiyon/dram/bilim kurgu/romantik komedi/biyografi/fantastik)"]
-
+				 "Şu anki ruh haline bakarak ne tür film izlersin (aksiyon/dram/bilim kurgu/romantik komedi/biyografi/fantastik)",
+				 "Kendini en ezik hissettiğin an hangisiydi ?","ilerde çocuğun olursa ne isim koymak istersin?",
+				 "Unicorun mu olmasını isterdin ejderhan mı?","Kaç sevgilin oldu?","Hayatta unutmadığın biri var mı?",
+				 "en sevdiğin şarkı?","Yapmaman gereken bir şeyi yaparken hiç yakalandın mı?","En sevdiğin sanatçı kim?",
+				 "karşı cinste ilk dikkatini çeken ne?","bu yıl hayatında neyi değişmeyi uygun görüyorsun?",
+				 "Birinin telefonunda gördüğün en tuhaf şey nedir?"]
