@@ -36,7 +36,7 @@ HELP_STRINGS = """
  - /dc: Size Doğruluk Veya Cesaret Sorusu Seçimi Yaptırı
  - /sahip: Sahibimi, Duyuru Kanalımı Ve Sahibimin Blog Kanalını Verir
  - /stat: Bottaki Toplam Soru Sayısını Ve Versiyonunu Verir
- 
+
 ‼️ /dc 𝐊𝐨𝐦𝐮𝐭𝐮 𝐏𝐦'𝐝𝐞 𝐂𝐚𝐥𝐢𝐬̧𝐦𝐚𝐳 :(
 """
 
@@ -99,7 +99,7 @@ def start(bot: Bot, update: Update):
                                            [InlineKeyboardButton(text="📢 Duyuru Kanalım",
                                                                  url="t.me/fireqanQBotlari")],
                                            [InlineKeyboardButton(text="🤖 Beni Gruba Ekle",
-                                                                 url="tg://resolve?domain=FgDc_Bot&startgroup=a")],
+                                                                 url="tg://resolve?domain=FgDc_Bot&group=a")],
                                            [InlineKeyboardButton(text="🍾 Oyun Grubumuz",
                                                                  url="t.me/FgDcBotGrup")],
                                            [InlineKeyboardButton(text="👮‍♂️ Sahibim",
