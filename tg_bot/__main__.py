@@ -18,7 +18,7 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 
 BOT_VERSİYON = "0.1.0"
 PM_START_TEXT = """
-Merhaba {}!
+Merhaba [{}](tg://user?id={})!
 
 Herhangi bir hata veya sorunuz varsa Sahibim İle İletişime Gecmekden Cekinmeyin! 😊
 
@@ -28,7 +28,7 @@ Kullanılabilir komutların listesini /help ile bulabilirsiniz.
 """
 
 HELP_STRINGS = """
-𝐒𝐞𝐥𝐚𝐦 {}!
+𝐒𝐞𝐥𝐚𝐦 [{user.first_name}](tg://user?id={user.id})!
 
 𝐊𝐨𝐦𝐮𝐭𝐥𝐚𝐫:
  - /start: botu başlat
@@ -36,7 +36,7 @@ HELP_STRINGS = """
  - /dc: Size Doğruluk Veya Cesaret Sorusu Seçimi Yaptırı
  - /sahip: Sahibimi, Duyuru Kanalımı Ve Sahibimin Blog Kanalını Verir
  - /stat: Bottaki Toplam Soru Sayısını Ve Versiyonunu Verir
- 
+
 ‼️ /dc 𝐊𝐨𝐦𝐮𝐭𝐮 𝐏𝐦'𝐝𝐞 𝐂𝐚𝐥𝐢𝐬̧𝐦𝐚𝐳 :(
 """
 
@@ -94,7 +94,8 @@ def start(bot: Bot, update: Update):
     user_id = user.id
     msg = update.effective_message
 
-    msg.reply_text(text=PM_START_TEXT.format(first_name),
+    msg.reply_text(text=PM_START_TEXT.format(user.first_name, user.id),
+        parse_mode=ParseMode.MARKDOWN,
         reply_markup=InlineKeyboardMarkup([
                                            [InlineKeyboardButton(text="📢 Duyuru Kanalım",
                                                                  url="t.me/fireqanQBotlari")],
