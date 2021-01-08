@@ -32,10 +32,10 @@ def dc(bot, update):
         dogruluk_text = "Doğruluk"
         cesaret_text = "Cesaret"
         msg.reply_text(text,
+                        parse_mode=ParseMode.MarkDown,
                         reply_markup=InlineKeyboardMarkup([
                                         [InlineKeyboardButton(text=dogruluk_text,
                                                                 message_id=msg.message_id,
-                                                                parse_mode="MarkDown",
                                                                 callback_data="1")],
                                         [InlineKeyboardButton(text=cesaret_text,
                                                                 message_id=msg.message_id,
