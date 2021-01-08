@@ -4,7 +4,6 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 
 from tg_bot import DB_URI
 
-
 def start() -> scoped_session:
     engine = create_engine(DB_URI, client_encoding="utf8")
     BASE.metadata.bind = engine
