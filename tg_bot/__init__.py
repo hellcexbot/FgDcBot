@@ -2,6 +2,7 @@ import logging
 import os
 import sys
 
+
 import telegram.ext as tg
 
 # günlük kaydı etkinleştir
