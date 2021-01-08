@@ -18,7 +18,7 @@ def dc(bot, update):
     #SORU1 = msg.reply_text(random.choice(SORULAR_TEXT1))
     if chat.type == "private":
         first_name = update.effective_user.first_name
-        text = f"**Merhaba {first_name} Üzgünüm Özel Mesajda Oyun Oynayamazsın :(**"
+        text = f"**𝐌𝐞𝐫𝐡𝐚𝐛𝐚 {first_name} 𝐔̈𝐳𝐠𝐮̈𝐧𝐮̈𝐦 𝐎̈𝐳𝐞𝐥 𝐌𝐞𝐬𝐚𝐣𝐝𝐚 𝐎𝐲𝐮𝐧 𝐎𝐲𝐧𝐚𝐲𝐚𝐦𝐚𝐳𝐬𝐢𝐧 :(**"
         msg.reply_text(text)
     else:
         text = f"{user.first_name} Sormamı İstediğin Soru Tipini Seç:"
