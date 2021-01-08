@@ -28,7 +28,7 @@ Kullanılabilir komutların listesini /help ile bulabilirsiniz.
 """
 
 HELP_STRINGS = """
-𝐒𝐞𝐥𝐚𝐦 [{user.first_name}](tg://user?id={user.id})!
+𝐒𝐞𝐥𝐚𝐦 [{}](tg://user?id={})!
 
 𝐊𝐨𝐦𝐮𝐭𝐥𝐚𝐫:
  - /start: botu başlat
@@ -110,9 +110,10 @@ def start(bot: Bot, update: Update):
 def get_help(bot: Bot, update: Update):
     user = update.effective_user
     first_name = user.first_name
+    user_id = user.id
     msg = update.effective_message
 
-    msg.reply_text(HELP_STRINGS.format(first_name))
+    msg.reply_text(HELP_STRINGS.format(first_name, user_id))
 
 
 
