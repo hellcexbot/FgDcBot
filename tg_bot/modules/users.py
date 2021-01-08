@@ -12,7 +12,6 @@ from tg_bot import dispatcher
 
 USERS_GROUP = 4
 
-
 @run_async
 def broadcast(bot: Bot, update: Update):
     to_send = update.effective_message.text.split(None, 1)
