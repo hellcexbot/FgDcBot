@@ -35,7 +35,8 @@ HELP_STRINGS = """
  - /help: Size bu mesajı atar.
  - /dc: Size Doğruluk Veya Cesaret Sorusu Seçimi Yaptırı
  - /sahip: Sahibimi, Duyuru Kanalımı Ve Sahibimin Blog Kanalını Verir
- - /stat: Bottaki Toplam Soru Sayısı Ve Versiyonunu Verir
+ - /stat: Bottaki Toplam Soru Sayısını Ve Versiyonunu Verir
+ 
 ‼️ /dc 𝐊𝐨𝐦𝐮𝐭𝐮 𝐏𝐦'𝐝𝐞 𝐂𝐚𝐥𝐢𝐬̧𝐦𝐚𝐳 :(
 """
 
