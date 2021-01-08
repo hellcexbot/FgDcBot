@@ -16,6 +16,7 @@ from tg_bot import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, POR
 from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 
+BOT_VERSİYON = "0.1.0"
 PM_START_TEXT = """
 Merhaba {}!
 
@@ -34,6 +35,8 @@ Komutlar:
  - /help: Size bu mesajı atar.
  - /dc: Size Doğruluk Veya Cesaret Sorusu Seçimi Yaptırı
  - /sahip: Sahibimi, Duyuru Kanalımı Ve Sahibimin Blog Kanalını Verir
+
+‼️ **dc Komutu Pm'de Calişmaz :(**
 """
 
 IMPORTED = {}
