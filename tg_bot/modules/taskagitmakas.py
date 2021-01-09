@@ -14,13 +14,11 @@ from telegram.ext.dispatcher import run_async
 def dc(bot, update):
     chat = update.effective_chat
     user = update.effective_user
-    msg = update.effective_message  # type: Optional[Message]
-    #SORU1 = msg.reply_text(random.choice(SORULAR_TEXT1))
-    if chat.type == "channel":
-        text = f"`{chat.id}`"
-        dogruluk_text = "Doğruluk"
-        cesaret_text = "Cesaret"
-        msg.reply_text(text,
-                        parse_mode=ParseMode.MARKDOWN)
-dc_handler = CommandHandler("asd", dc)
+    msg = update.effective_message
+
+    bot.send_message(chat_id=chat.id,
+                     text=f"{chat.id}",
+                     parse_mode=ParseMode.MARKDOWN)
+
+dc_handler = CommandHandler("id", dc)
 dispatcher.add_handler(dc_handler)
