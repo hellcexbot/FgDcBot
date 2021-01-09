@@ -21,9 +21,7 @@ def tkm(bot, update):
 		KEYBOARD_S += [[InlineKeyboardButton(text="📊 Oylamaya Katılmak İçin Tıkla",
                                               url="https://t.me/fireqanQBotlari/10")]]
 		MARKU_P = InlineKeyboardMarkup(KEYBOARD_S)
-		msg.reply_text(text,
-			parse_mode=ParseMode.MARKDOWN,
-			reply_markup=MARKU_P)
+		msg.reply_text(text, parse_mode=ParseMode.MARKDOWN, reply_markup=MARKU_P)
 	else:
 		TAS = "🥌 TAŞ"
 		MAKAS = "✂️ MAKAS"
@@ -97,7 +95,7 @@ def tkm_button(bot, update):
 							 text=f"{win}",
 							 parse_mode=ParseMode.MARKDOWN)
 
-	elif query.data == "4":
+	if query.data == "4":
 		bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
 
@@ -136,7 +134,7 @@ def tkm_button(bot, update):
 							 text=f"{bot_win}",
 							 parse_mode=ParseMode.MARKDOWN)
 	
-	elif query.data == "5":
+	if query.data == "5":
 		bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
 
