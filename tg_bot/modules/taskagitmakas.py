@@ -31,37 +31,65 @@ def tkm(bot, update):
                        reply_markup=MARKU_P)
 
     else:
-        text = f"[{user.first_name}](tg://user?id={user.id}) 𝐒𝐨𝐫𝐦𝐚𝐦𝐢 𝐈̇𝐬𝐭𝐞𝐝𝐢𝐠̆𝐢𝐧 𝐒𝐨𝐫𝐮 𝐓𝐢𝐩𝐢𝐧𝐢 𝐒𝐞𝐜̧:"
-        dogruluk_text = "Doğruluk"
-        cesaret_text = "Cesaret"
-        msg.reply_text(text,
-                        parse_mode=ParseMode.MARKDOWN,
-                        reply_markup=InlineKeyboardMarkup([
-                                        [InlineKeyboardButton(text=dogruluk_text,
-                                                                message_id=msg.message_id,
-                                                                callback_data="1")],
-                                        [InlineKeyboardButton(text=cesaret_text,
-                                                                message_id=msg.message_id,
-                                                                callback_data="2")]]))
-def tkmm(bot, update):
+    	TAS = "🥌 TAŞ"
+		MAKAS = "✂️ MAKAS"
+		KAGIT = "📃 KAĞIT"
+
+		keyboards = [[InlineKeyboardButton(text=TAS,
+											callback_data="3")]]
+
+		keyboards += [[InlineKeyboardButton(text=KAGIT,
+											callback_data="4")]]
+
+		keyboards += [[InlineKeyboardButton(text=MAKAS,
+											callback_data="5")]]
+
+		markup  = InlineKeyboardMarkup(keyboards)
+
+		msg.reply_text("[{user.first_name}](tg://user?id={user.id}) Birini Seç:",
+						parse_mode=ParseMode.MARKDOWN,
+						reply_markup=markup)
+        
+def tkm_button(bot, update):
     query = update.callback_query
     msg_id = query.id
     msg = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
+    tkm = ["Taş", "Kağıt", "Makas"]
+    berabere = "🤝 **BERABERE**"
+    win = f"✅ **[{user.first_name}](tg://user?id={user.id}) KAZANDI** 🥳"
+    bot_win = "❌ **BOT KAZANDI**"
+
+    tkm_random = random.choice(tkm)
 
     query.answer()
 
 
-    if query.data == "1":
+    if query.data == "3":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id,
-                         text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐃𝐨𝐠̆𝐫𝐮𝐥𝐮𝐤 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
+                         text=f"[{user.first_name}](tg://user?id={user.id}) 𝐓𝐚𝐬̧ 𝐒𝐞𝐜̧𝐞𝐧𝐞𝐠̆𝐢𝐧𝐢 𝐒𝐞𝐜̧𝐭𝐢...",
                          parse_mode=ParseMode.MARKDOWN)
-        sleep(1)
-        bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(DOGRU_SR_TEXT)}")
-    if query.data == "2":
+        bot.send_message(chat_id=update.effective_chat.id,
+                         text="**Bot Seçim Yapıyor**",
+                         parse_mode=ParseMode.MARKDOWN)
+        if tkm_random == "Taş":
+        	bot.send_message(chat_id=update.effective_chat.id,
+                         text=f"**Bot Seçim Yaptı: {tkm_random}**",
+                         parse_mode=ParseMode.MARKDOWN)
+        	sleep(15)
+        	bot.send_message(chat_id=update.effective_chat.id,
+                         text=f"**{berabere}**",
+                         parse_mode=ParseMode.MARKDOWN)
+
+        if tkm_random == "Kağıt":
+        	pass
+
+        if tkm_random == "Makas":
+        	pass
+    if query.data == "4":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id,
@@ -70,10 +98,10 @@ def tkmm(bot, update):
         sleep(1)
         bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
 
-i_handler = CommandHandler("tkm", tkm)
-ii_handler = CallbackQueryHandler(tkmm)
-dispatcher.add_handler(i_handler)
-dispatcher.add_handler(ii_handler)
+tkm_handler = CommandHandler("tkm", tkm)
+tkm_btn_handler = CallbackQueryHandler(tkm_button)
+dispatcher.add_handler(tkm_handler)
+dispatcher.add_handler(tkm_btn_handler)
 
 """
 @run_async
