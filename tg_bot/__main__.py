@@ -29,7 +29,7 @@ START_CHAT_İD_TEXT = f"""
 """
 
 # Hangi Grupda Hangi Kim Hangi Komutu Kullandı
-KOMUT_CHAT_İD = 
+KOMUT_CHAT_İD = " -1001340913092"
 
 # KOMUT_CHAT_İD TEXT
 KOMUT_CHAT_İD_TEXT = f"""
