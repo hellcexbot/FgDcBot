@@ -1,6 +1,7 @@
 from io import BytesIO
 from time import sleep
 from typing import Optional
+
 from telegram import TelegramError, Chat, Message
 from telegram import Update, Bot
 from telegram.error import BadRequest
@@ -12,16 +13,17 @@ from tg_bot import dispatcher
 
 USERS_GROUP = 4
 
+
 @run_async
 def broadcast(bot: Bot, update: Update):
     to_send = update.effective_message.text.split(None, 1)
-    if len(to_send) >= 2:
+    if len(to_send) >= 1:
         chats = sql.get_all_chats() or []
         failed = 0
         for chat in chats:
             try:
                 bot.sendMessage(int(chat.chat_id), to_send[1])
-                sleep(0.1)
+                sleep(0)
             except TelegramError:
                 failed += 1
                 LOGGER.warning("%s grubuna yayın gönderilemedi, grup adı %s", str(chat.chat_id), str(chat.chat_name))
