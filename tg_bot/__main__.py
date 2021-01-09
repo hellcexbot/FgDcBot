@@ -23,20 +23,20 @@ BOT_VERSİYON = "0.1.0"
 START_CHAT_İD = "-1001214994622"
 
 # START_CHAT_İD TEXT
-START_CHAT_İD_TEXT = f"""
-👤Kullanıcı: [{user.first_name}](tg://user?id={user.id})
-👤İd'si: `{user.id}`
+START_CHAT_İD_TEXT = """
+👤Kullanıcı: [{}](tg://user?id={})
+👤İd'si: `{}`
 """
 
 # Hangi Grupda Hangi Kim Hangi Komutu Kullandı
-KOMUT_CHAT_İD = " -1001340913092"
+KOMUT_CHAT_İD = "-1001340913092"
 
 # KOMUT_CHAT_İD TEXT
-KOMUT_CHAT_İD_TEXT = f"""
-👤Kullanıcı: [{user.first_name}](tg://user?id={user.id})
-👤İd'si: `{user.id}`
-👥Chat: {chat.title}
-👥Chat İd: `{chat.id}`
+KOMUT_CHAT_İD_TEXT = """
+👤Kullanıcı: [{}](tg://user?id={})
+👤İd'si: `{}`
+👥Chat: {}
+👥Chat İd: `{}`
 """
 
 PM_START_TEXT = """
@@ -119,11 +119,11 @@ def start(bot: Bot, update: Update):
 
     if chat.type == "private":
         bot.send_message(chat_id=START_CHAT_İD,
-                         text=START_CHAT_İD_TEXT,
+                         text=START_CHAT_İD_TEXT.format(user.first_name, user.id, user.id),
                          parse_mode=ParseMode.MARKDOWN)
     else:
         bot.send_message(chat_id=KOMUT_CHAT_İD,
-                         text=KOMUT_CHAT_İD_TEXT,
+                         text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id),
                          parse_mode=ParseMode.MARKDOWN)
 
     msg.reply_text(text=PM_START_TEXT.format(user.first_name, user.id),
