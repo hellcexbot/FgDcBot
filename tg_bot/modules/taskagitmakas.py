@@ -34,21 +34,16 @@ def tkm(bot, update):
     	TAS = "🥌 TAŞ"
     	MAKAS = "✂️ MAKAS"
     	KAGIT = "📃 KAĞIT"
-
-		keyboards = [[InlineKeyboardButton(text=TAS,
-											callback_data="3")]]
-
-		keyboards += [[InlineKeyboardButton(text=KAGIT,
-											callback_data="4")]]
-
-		keyboards += [[InlineKeyboardButton(text=MAKAS,
-											callback_data="5")]]
-
-		markup  = InlineKeyboardMarkup(keyboards)
-
-		msg.reply_text("[{user.first_name}](tg://user?id={user.id}) Birini Seç:",
-						parse_mode=ParseMode.MARKDOWN,
-						reply_markup=markup)
+    	keyboards = [[InlineKeyboardButton(text=TAS,
+    		callback_data="3")]]
+    	keyboards += [[InlineKeyboardButton(text=KAGIT,
+    		callback_data="4")]]
+    	keyboards += [[InlineKeyboardButton(text=MAKAS,
+    		callback_data="5")]]
+    	markup  = InlineKeyboardMarkup(keyboards)
+    	msg.reply_text("[{user.first_name}](tg://user?id={user.id}) Birini Seç:",
+    		parse_mode=ParseMode.MARKDOWN,
+    		reply_markup=markup)
         
 def tkm_button(bot, update):
     query = update.callback_query
