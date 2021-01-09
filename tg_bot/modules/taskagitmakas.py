@@ -32,8 +32,8 @@ def tkm(bot, update):
 
     else:
     	TAS = "🥌 TAŞ"
-		MAKAS = "✂️ MAKAS"
-		KAGIT = "📃 KAĞIT"
+    	MAKAS = "✂️ MAKAS"
+    	KAGIT = "📃 KAĞIT"
 
 		keyboards = [[InlineKeyboardButton(text=TAS,
 											callback_data="3")]]
