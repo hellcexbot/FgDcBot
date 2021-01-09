@@ -1,6 +1,8 @@
-import random
+import random, asyncio
 from time import sleep
 
+from tg_bot.modules.helper_funcs.doguluksoru import DOGRU_SR_TEXT
+from tg_bot.modules.helper_funcs.cesaretsoru import CESARET_SR_TEXT
 from tg_bot import dispatcher
 from telegram import Message, Update, Bot, User
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
@@ -37,10 +39,10 @@ def dc(bot, update):
                         reply_markup=InlineKeyboardMarkup([
                                         [InlineKeyboardButton(text=dogruluk_text,
                                                                 message_id=msg.message_id,
-                                                                callback_data="h_h")],
+                                                                callback_data="41")],
                                         [InlineKeyboardButton(text=cesaret_text,
                                                                 message_id=msg.message_id,
-                                                                callback_data="hh_hh")]]))
+                                                                callback_data="2")]]))
 def button(bot, update):
     query = update.callback_query
     msg_id = query.id
@@ -51,22 +53,22 @@ def button(bot, update):
     query.answer()
 
 
-    if query.data == "h_h":
+    if query.data == "4":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id,
                          text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐃𝐨𝐠̆𝐫𝐮𝐥𝐮𝐤 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
                          parse_mode=ParseMode.MARKDOWN)
         sleep(1)
-        bot.send_message(chat_id=update.effective_chat.id, text="Asdds")
-    if query.data == "hh_hh":
+        bot.send_message(chat_id=update.effective_chat.id, text="selam")
+    if query.data == "2":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id,
                          text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐂𝐞𝐬𝐚𝐫𝐞𝐭 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
                          parse_mode=ParseMode.MARKDOWN)
         sleep(1)
-        bot.send_message(chat_id=update.effective_chat.id, text="sdasd")
+        bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
 
 dc_handler = CommandHandler("asd", dc)
 dc_dc_handler = CallbackQueryHandler(button)
