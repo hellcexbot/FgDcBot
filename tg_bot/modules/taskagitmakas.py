@@ -36,13 +36,13 @@ def tkm(bot, update):
     	KAGIT = "📃 KAĞIT"
 
 		keyboards = [[InlineKeyboardButton(text=TAS,
-											callback_data="3")]]
+			callback_data="3")]]
 
 		keyboards += [[InlineKeyboardButton(text=KAGIT,
-											callback_data="4")]]
+			callback_data="4")]]
 
 		keyboards += [[InlineKeyboardButton(text=MAKAS,
-											callback_data="5")]]
+			callback_data="5")]]
 
 		markup  = InlineKeyboardMarkup(keyboards)
 
