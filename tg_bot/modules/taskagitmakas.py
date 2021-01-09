@@ -39,7 +39,7 @@ def dc(bot, update):
                         reply_markup=InlineKeyboardMarkup([
                                         [InlineKeyboardButton(text=dogruluk_text,
                                                                 message_id=msg.message_id,
-                                                                callback_data="41")],
+                                                                callback_data="4")],
                                         [InlineKeyboardButton(text=cesaret_text,
                                                                 message_id=msg.message_id,
                                                                 callback_data="2")]]))
