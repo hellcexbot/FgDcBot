@@ -17,10 +17,27 @@ from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 
 # Bot Versiyonu
-BOT_VERSİYON = "0.1.2"
+BOT_VERSİYON = "0.1.0"
 
 # Pmde Botu Başlatanları Göndereceği Chat İd
-KULLANICI_CHAT_İD = "-1001214994622"
+START_CHAT_İD = "-1001214994622"
+
+# START_CHAT_İD TEXT
+START_CHAT_İD_TEXT = f"""
+👤Kullanıcı: [{user.first_name}](tg://user?id={user.id})
+👤İd'si: `{user.id}`
+"""
+
+# Hangi Grupda Hangi Kim Hangi Komutu Kullandı
+KOMUT_CHAT_İD = 
+
+# KOMUT_CHAT_İD TEXT
+KOMUT_CHAT_İD_TEXT = f"""
+👤Kullanıcı: [{user.first_name}](tg://user?id={user.id})
+👤İd'si: `{user.id}`
+👥Chat: {chat.title}
+👥Chat İd: `{chat.id}`
+"""
 
 PM_START_TEXT = """
 Merhaba [{}](tg://user?id={})!
@@ -97,7 +114,17 @@ def start(bot: Bot, update: Update):
     user = update.effective_user
     first_name = user.first_name
     user_id = user.id
+    chat = update.effective_chat
     msg = update.effective_message
+
+    if chat.type == "private":
+        bot.send_message(chat_id=START_CHAT_İD,
+                         text=START_CHAT_İD_TEXT,
+                         parse_mode=ParseMode.MARKDOWN)
+    else:
+        bot.send_message(chat_id=KOMUT_CHAT_İD,
+                         text=KOMUT_CHAT_İD_TEXT,
+                         parse_mode=ParseMode.MARKDOWN)
 
     msg.reply_text(text=PM_START_TEXT.format(user.first_name, user.id),
         parse_mode=ParseMode.MARKDOWN,
