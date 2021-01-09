@@ -46,7 +46,6 @@ def tkm(bot, update):
                                         [InlineKeyboardButton(text=makas_text,
                                                                 message_id=msg.message_id,
                                                                 callback_data="makas_bttn")]]))
-def bttn(bot, update):
     query = update.callback_query
     msg_id = query.id
     msg = update.effective_message
@@ -86,6 +85,4 @@ def bttn(bot, update):
         bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
 
 _handler = CommandHandler("tkm", tkm)
-dc__handler = CallbackQueryHandler(bttn)
 dispatcher.add_handler(_handler)
-dispatcher.add_handler(dc__handler)
