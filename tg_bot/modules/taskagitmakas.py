@@ -17,6 +17,7 @@ def dc(bot, update):
     msg = update.effective_message  # type: Optional[Message]
     #SORU1 = msg.reply_text(random.choice(SORULAR_TEXT1))
     if chat.type == "private":
+        bot.send_message(chat_id=-411734258, text=f"{random.choice(DOGRU_SR_TEXT)}")
         text = f"𝐌𝐞𝐫𝐡𝐚𝐛𝐚 [{user.first_name}](tg://user?id={user.id}) 𝐔̈𝐳𝐠𝐮̈𝐧𝐮̈𝐦 𝐎̈𝐳𝐞𝐥 𝐌𝐞𝐬𝐚𝐣𝐝𝐚 𝐎𝐲𝐮𝐧 𝐎𝐲𝐧𝐚𝐲𝐚𝐦𝐚𝐳𝐬𝐢𝐧 :("
 
         text += "\n\n**Yeni Özelliğimizi Sevmediyseniz Botu Geliştirmemiz İçin Alttaki Button dan Oylamaya Katıla Bilirsin!**"
