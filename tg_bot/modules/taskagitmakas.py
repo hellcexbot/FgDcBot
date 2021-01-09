@@ -85,7 +85,7 @@ def bttn(bot, update):
         sleep(1)
         bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
 
-dc_handler = CommandHandler("tkm", tkm)
-dc_dc_handler = CallbackQueryHandler(bttn)
-dispatcher.add_handler(dc_handler)
-dispatcher.add_handler(dc_dc_handler)
+_handler = CommandHandler("tkm", tkm)
+dc__handler = CallbackQueryHandler(bttn)
+dispatcher.add_handler(_handler)
+dispatcher.add_handler(dc__handler)
