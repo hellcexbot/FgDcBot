@@ -30,13 +30,13 @@ def tkm(bot, update):
 		KAGIT = "📃 KAĞIT"
 
 		keyboards = [[InlineKeyboardButton(text=TAS,
-											callback_data="tas_btn")]]
+											callback_data="3")]]
 
 		keyboards += [[InlineKeyboardButton(text=KAGIT,
-											callback_data="kagit_btn")]]
+											callback_data="4")]]
 
 		keyboards += [[InlineKeyboardButton(text=MAKAS,
-											callback_data="makas_btn")]]
+											callback_data="5")]]
 
 		markup  = InlineKeyboardMarkup(keyboards)
 
@@ -58,7 +58,7 @@ def tkm_button(bot, update):
 
 	query.answer()
 
-	if query.data == "tas_btn":
+	if query.data == "3":
 		bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
 
@@ -97,7 +97,7 @@ def tkm_button(bot, update):
 							 text=f"{win}",
 							 parse_mode=ParseMode.MARKDOWN)
 
-	elif query.data == "kagit_btn":
+	elif query.data == "4":
 		bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
 
@@ -136,7 +136,7 @@ def tkm_button(bot, update):
 							 text=f"{bot_win}",
 							 parse_mode=ParseMode.MARKDOWN)
 	
-	elif query.data == "makas_btn":
+	elif query.data == "5":
 		bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
 
