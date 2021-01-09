@@ -43,34 +43,5 @@ def dc(bot, update):
                                         [InlineKeyboardButton(text=cesaret_text,
                                                                 message_id=msg.message_id,
                                                                 callback_data="3")]]))
-def button(bot, update):
-    query = update.callback_query
-    msg_id = query.id
-    msg = update.effective_message
-    user = update.effective_user
-    chat = update.effective_chat
-
-    query.answer()
-
-
-    if query.data == "4":
-        bot.delete_message(chat_id=chat.id,
-                           message_id=msg.message_id)
-        bot.send_message(chat_id=update.effective_chat.id,
-                         text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐃𝐨𝐠̆𝐫𝐮𝐥𝐮𝐤 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
-                         parse_mode=ParseMode.MARKDOWN)
-        sleep(1)
-        bot.send_message(chat_id=update.effective_chat.id, text="selam")
-    if query.data == "3":
-        bot.delete_message(chat_id=chat.id,
-                           message_id=msg.message_id)
-        bot.send_message(chat_id=update.effective_chat.id,
-                         text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐂𝐞𝐬𝐚𝐫𝐞𝐭 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
-                         parse_mode=ParseMode.MARKDOWN)
-        sleep(1)
-        bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
-
 dc_handler = CommandHandler("asd", dc)
-dc_dc_handler = CallbackQueryHandler(button)
 dispatcher.add_handler(dc_handler)
-dispatcher.add_handler(dc_dc_handler)
