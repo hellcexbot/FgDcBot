@@ -42,7 +42,7 @@ def dc(bot, update):
                                                                 callback_data="4")],
                                         [InlineKeyboardButton(text=cesaret_text,
                                                                 message_id=msg.message_id,
-                                                                callback_data="2")]]))
+                                                                callback_data="3")]]))
 def button(bot, update):
     query = update.callback_query
     msg_id = query.id
@@ -61,7 +61,7 @@ def button(bot, update):
                          parse_mode=ParseMode.MARKDOWN)
         sleep(1)
         bot.send_message(chat_id=update.effective_chat.id, text="selam")
-    if query.data == "2":
+    if query.data == "3":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id,
