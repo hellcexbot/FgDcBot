@@ -202,7 +202,7 @@ def tkm_button(bot, update):
 							 text=f"{berabere}",
 							 parse_mode=ParseMode.MARKDOWN)
 """
-dc_handler = CommandHandler("tkm", tkm)
-dc_dc_handler = CallbackQueryHandler(tkm_button)
-dispatcher.add_handler(dc_handler)
-dispatcher.add_handler(dc_dc_handler)
+ii_handler = CommandHandler("tkm", tkm)
+i_handler = CallbackQueryHandler(tkm_button)
+dispatcher.add_handler(ii_handler)
+dispatcher.add_handler(i_handler)
