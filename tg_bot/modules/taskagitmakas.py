@@ -22,8 +22,8 @@ def tkm(bot, update):
                                               url="https://t.me/fireqanQBotlari/10")]]
 		MARKU_P = InlineKeyboardMarkup(KEYBOARD_S)
         msg.reply_text(text,
-        				parse_mode=ParseMode.MARKDOWN,
-        				reply_markup=MARKU_P)
+        			   parse_mode=ParseMode.MARKDOWN,
+        			   reply_markup=MARKU_P)
 	else:
 		TAS = "🥌 TAŞ"
 		MAKAS = "✂️ MAKAS"
