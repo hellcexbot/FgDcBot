@@ -21,7 +21,7 @@ def tkm(bot, update):
 		KEYBOARD_S += [[InlineKeyboardButton(text="📊 Oylamaya Katılmak İçin Tıkla",
                                               url="https://t.me/fireqanQBotlari/10")]]
 		MARKU_P = InlineKeyboardMarkup(KEYBOARD_S)
-        msg.reply_text(text=text,
+        msg.reply_text(text,
         				parse_mode=ParseMode.MARKDOWN,
         				reply_markup=MARKU_P)
 	else:
