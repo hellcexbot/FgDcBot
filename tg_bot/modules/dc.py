@@ -3,6 +3,7 @@ from time import sleep
 
 from tg_bot.modules.helper_funcs.doguluksoru import DOGRU_SR_TEXT
 from tg_bot.modules.helper_funcs.cesaretsoru import CESARET_SR_TEXT
+from tg_bot.__main__ import KOMUT_CHAT_İD_TEXT
 from tg_bot import dispatcher
 from telegram import Message, Update, Bot, User
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
@@ -23,7 +24,7 @@ def dc(bot, update):
         KEYBOARD_S = [[InlineKeyboardButton(text="🤖 Beni Gruba Ekle",
                                              url="tg://resolve?domain=FgDc_Bot&startgroup=a")]]
         KEYBOARD_S += [[InlineKeyboardButton(text="📊 Oylamaya Katılmak İçin Tıkla",
-                                              url="https://t.me/fireqanQBotlari/13")]]
+                                              url="https://t.me/fireqanQBotlari/10")]]
 
         MARKU_P = InlineKeyboardMarkup(KEYBOARD_S)
         msg.reply_text(text,
@@ -43,6 +44,9 @@ def dc(bot, update):
                                         [InlineKeyboardButton(text=cesaret_text,
                                                                 message_id=msg.message_id,
                                                                 callback_data="2")]]))
+    bot.send_message(chat_id=KOMUT_CHAT_İD,
+                         text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id, "dc"),
+                         parse_mode=ParseMode.MARKDOWN)
 def button(bot, update):
     query = update.callback_query
     msg_id = query.id
