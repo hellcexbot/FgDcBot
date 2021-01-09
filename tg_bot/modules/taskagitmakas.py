@@ -47,7 +47,6 @@ def tkm(bot, update):
                                                                 message_id=msg.message_id,
                                                                 callback_data="makas_bttn")]]))
     query = update.callback_query
-    msg_id = query.id
     msg = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
