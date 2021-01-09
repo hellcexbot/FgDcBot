@@ -51,9 +51,6 @@ def tkm(bot, update):
     user = update.effective_user
     chat = update.effective_chat
 
-    query.answer()
-
-
     if query.data == "tas_bttn":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
