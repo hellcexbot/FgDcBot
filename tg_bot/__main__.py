@@ -17,7 +17,7 @@ from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 
 # Bot Versiyonu
-BOT_VERSİYON = "0.1.0"
+BOT_VERSİYON = "0.1.2"
 
 # Pmde Botu Başlatanları Göndereceği Chat İd
 KULLANICI_CHAT_İD = "-1001214994622"
