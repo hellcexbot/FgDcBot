@@ -10,10 +10,9 @@ from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async
 
-OYUNCU = []
 
 @run_async
-def dc(self, update):
+def dc(bot, update):
     chat = update.effective_chat
     user = update.effective_user
     msg = update.effective_message  # type: Optional[Message]
@@ -25,7 +24,7 @@ def dc(self, update):
         KEYBOARD_S = [[InlineKeyboardButton(text="🤖 Beni Gruba Ekle",
                                              url="tg://resolve?domain=FgDc_Bot&startgroup=a")]]
         KEYBOARD_S += [[InlineKeyboardButton(text="📊 Oylamaya Katılmak İçin Tıkla",
-                                              url="https://t.me/fireqanQBotlari/13")]]
+                                              url="https://t.me/fireqanQBotlari/10")]]
 
         MARKU_P = InlineKeyboardMarkup(KEYBOARD_S)
         msg.reply_text(text,
@@ -33,8 +32,6 @@ def dc(self, update):
                        reply_markup=MARKU_P)
 
     else:
-        oyuncu2 = [user.id]
-        OYUNCU.append(oyuncu2)
         text = f"[{user.first_name}](tg://user?id={user.id}) 𝐒𝐨𝐫𝐦𝐚𝐦𝐢 𝐈̇𝐬𝐭𝐞𝐝𝐢𝐠̆𝐢𝐧 𝐒𝐨𝐫𝐮 𝐓𝐢𝐩𝐢𝐧𝐢 𝐒𝐞𝐜̧:"
         dogruluk_text = "Doğruluk"
         cesaret_text = "Cesaret"
@@ -47,10 +44,10 @@ def dc(self, update):
                                         [InlineKeyboardButton(text=cesaret_text,
                                                                 message_id=msg.message_id,
                                                                 callback_data="2")]]))
-    self.send_message(chat_id=KOMUT_CHAT_İD,
+    bot.send_message(chat_id=KOMUT_CHAT_İD,
                          text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id, "dc"),
                          parse_mode=ParseMode.MARKDOWN)
-def button(self, update):
+def button(bot, update):
     query = update.callback_query
     msg_id = query.id
     msg = update.effective_message
@@ -61,29 +58,21 @@ def button(self, update):
 
 
     if query.data == "1":
-        if OYUNCU == update.effective_user.id and OYUNCU == update.effective_chat.id:
-            self.send_message(chat_id=chat.id,
-                              text="ss")
-            
-        else:
-            self.send_message(chat_id=chat.id,
-                              text="ssadsasdsad")
-            
-        #bot.delete_message(chat_id=chat.id,
-                           #message_id=msg.message_id)
-        #bot.send_message(chat_id=update.effective_chat.id,
-                         #text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐃𝐨𝐠̆𝐫𝐮𝐥𝐮𝐤 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
-                         #parse_mode=ParseMode.MARKDOWN)
-        #sleep(1)
-        #bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(DOGRU_SR_TEXT)}")
-    if query.data == "2":
-        self.delete_message(chat_id=chat.id,
+        bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
-        self.send_message(chat_id=update.effective_chat.id,
+        bot.send_message(chat_id=update.effective_chat.id,
+                         text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐃𝐨𝐠̆𝐫𝐮𝐥𝐮𝐤 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
+                         parse_mode=ParseMode.MARKDOWN)
+        sleep(1)
+        bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(DOGRU_SR_TEXT)}")
+    if query.data == "2":
+        bot.delete_message(chat_id=chat.id,
+                           message_id=msg.message_id)
+        bot.send_message(chat_id=update.effective_chat.id,
                          text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐂𝐞𝐬𝐚𝐫𝐞𝐭 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
                          parse_mode=ParseMode.MARKDOWN)
         sleep(1)
-        self.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
+        bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
 
 dc_handler = CommandHandler("dc", dc)
 dc_dc_handler = CallbackQueryHandler(button)
