@@ -3,7 +3,7 @@ from time import sleep
 
 from tg_bot.modules.helper_funcs.doguluksoru import DOGRU_SR_TEXT
 from tg_bot.modules.helper_funcs.cesaretsoru import CESARET_SR_TEXT
-from tg_bot.__main__ import KOMUT_CHAT_İD_TEXT
+from tg_bot.__main__ import KOMUT_CHAT_İD_TEXT, KOMUT_CHAT_İD
 from tg_bot import dispatcher
 from telegram import Message, Update, Bot, User
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
