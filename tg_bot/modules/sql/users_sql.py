@@ -11,7 +11,7 @@ class Users(BASE):
     user_id = Column(Integer, primary_key=True)
     username = Column(UnicodeText)
 
-    def __init__(self, user_id, username=None, first_name):
+    def __init__(self, user_id, username=None):
         self.user_id = user_id
         self.username = username
         self.first_name = first_name
