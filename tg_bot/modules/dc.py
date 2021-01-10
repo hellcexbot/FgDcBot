@@ -60,7 +60,7 @@ def button(bot, update):
 
 
     if query.data == "1":
-        if oyuncu == user.id:
+        if oyuncu != user.id:
             bot.send_message(chat_id=chat.id,
                               text="ss")
             return
