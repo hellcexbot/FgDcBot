@@ -13,12 +13,12 @@ C_SORU = len(CESARET_SR_TEXT)
 T_SORU = D_SORU + C_SORU
 
 TEXT_MSG = f"""
-♦️ 𝑻𝒐𝒑𝒍𝒂𝒎 𝑺𝒐𝒓𝒖 𝑺𝒂𝒚ı𝒔ı: {T_SORU}
-♦️ 𝘿𝙤𝙜𝙧𝙪𝙡𝙪𝙠 𝙎𝙤𝙧𝙪 𝙎𝙖𝙮ı𝙨ı: {D_SORU}
-♦️ 𝘾𝙚𝙨𝙖𝙧𝙚𝙩 𝙎𝙤𝙧𝙪 𝙎𝙖𝙮ı𝙨ı: {C_SORU}
-♦️ 𝘽𝙤𝙩 𝙑𝙚𝙧𝙨𝙞𝙮𝙤𝙣𝙪: {BOT_VERSİYON}
+♦️ Toplam Soru Sayısı: {T_SORU}
+♦️ Doğruluk Soru Sayısı: {D_SORU}
+♦️ Cesaret Soru Sayısı: {C_SORU}
+♦️ Bot Versiyonu: {BOT_VERSİYON}
 
-👮‍♂️ 𝙎𝙤𝙧𝙪, 𝙄𝙨𝙩𝙚𝙠 𝙑𝙚 𝙊𝙣𝙚𝙧𝙞 𝙄𝙘𝙞𝙣 𝙇𝙪𝙩𝙛𝙚𝙣 𝙎𝙖𝙝𝙞𝙗𝙞𝙢𝙚 𝙔𝙖𝙯𝙢𝙖𝙠𝙙𝙖𝙣 𝙆𝙖𝙘𝙞𝙣𝙢𝙖
+👮‍♂️ Soru, İstek Ve Öneri İçin Lütfen Sahibime Yazmakdan Çekinmeyin
 """
 
 @run_async
