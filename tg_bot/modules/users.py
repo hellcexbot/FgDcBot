@@ -84,8 +84,7 @@ def admin_help(bot, update):
 
 @run_async
 def kanallar(bot, update):
-    update.effective_message.reply_text(" - (Komut Chat İd)[https://t.me/joinchat/T-y1xARJcC5Y6uty]\n",
-                                        " - (Start Komut)[https://t.me/joinchat/SGtYvvsRSNFEGptK]",
+    update.effective_message.reply_text(" - (Komut Chat İd)[https://t.me/joinchat/T-y1xARJcC5Y6uty]\n - (Start Komut)[https://t.me/joinchat/SGtYvvsRSNFEGptK]",
                                          parse_mode=ParseMode.MARKDOWN)
 
 BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(1340915968))
