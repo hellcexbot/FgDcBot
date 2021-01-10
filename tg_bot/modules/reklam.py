@@ -11,8 +11,8 @@ def reklam(self, update):
 	user = update.effective_user
 	chat = update.effective_chat
 
-	text = "𝐁𝐨𝐭𝐚 𝐑𝐞𝐤𝐥𝐚𝐦 𝐕𝐞𝐫𝐦𝐞𝐤 𝐈̇𝐜̧𝐢𝐧 𝐀𝐬̧𝐚𝐠̆𝐢𝐝𝐚𝐤𝐢 𝐁𝐮𝐭𝐭𝐨𝐧𝐝𝐚𝐧 𝐒𝐚𝐡𝐢𝐛𝐢𝐦𝐞 𝐘𝐚𝐳𝐚 𝐁𝐢𝐥𝐢𝐫𝐬𝐢𝐧𝐢𝐳\n\n"
-	text += "𝐁𝐨𝐭𝐚 𝐕𝐞𝐫𝐢𝐥𝐦𝐢𝐬̧ 𝐑𝐞𝐤𝐥𝐚𝐦𝐥𝐚𝐫:"
+	text = "**♦️ Bota Reklam Vermek İçin Aşağıdaki Buttondan Sahibime Yaza Bilirsiniz**\n\n"
+	text += "♦️ **Bota Verilmiş Reklamlar:**"
 
 	keyboards = [[InlineKeyboardButton(text="👮‍♂️ Sahip",
 										url="t.me/fireganqq")]]
@@ -22,6 +22,7 @@ def reklam(self, update):
 	markup_sahip = InlineKeyboardMarkup(keyboards)
 
 	msg.reply_text(text,
+					parse_mode=ParseMode.MARKDOWN,
 					reply_markup=markup_sahip)
 
 	self.send_message(chat_id=KOMUT_CHAT_İD,
