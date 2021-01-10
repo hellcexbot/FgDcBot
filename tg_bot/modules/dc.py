@@ -63,18 +63,18 @@ def button(bot, update):
         if OYUNCU != user.id:
             bot.send_message(chat_id=chat.id,
                               text="ss")
-            return
+            #return
         else:
             bot.send_message(chat_id=chat.id,
                               text="ssadsasdsad")
-            return
-        bot.delete_message(chat_id=chat.id,
-                           message_id=msg.message_id)
-        bot.send_message(chat_id=update.effective_chat.id,
-                         text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐃𝐨𝐠̆𝐫𝐮𝐥𝐮𝐤 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
-                         parse_mode=ParseMode.MARKDOWN)
-        sleep(1)
-        bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(DOGRU_SR_TEXT)}")
+            #return
+        #bot.delete_message(chat_id=chat.id,
+                           #message_id=msg.message_id)
+        #bot.send_message(chat_id=update.effective_chat.id,
+                         #text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐃𝐨𝐠̆𝐫𝐮𝐥𝐮𝐤 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
+                         #parse_mode=ParseMode.MARKDOWN)
+        #sleep(1)
+        #bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(DOGRU_SR_TEXT)}")
     if query.data == "2":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
