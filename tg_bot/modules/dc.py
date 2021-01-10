@@ -13,7 +13,7 @@ from telegram.ext.dispatcher import run_async
 OYUNCU = []
 
 @run_async
-def dc(self, update):
+def dc(bot, update):
     chat = update.effective_chat
     user = update.effective_user
     msg = update.effective_message  # type: Optional[Message]
