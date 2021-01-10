@@ -33,7 +33,7 @@ def dc(self, update):
                        reply_markup=MARKU_P)
 
     else:
-        OYUNCU.append(user.id)
+        OYUNCU.append(user.id, chat.id)
         text = f"[{user.first_name}](tg://user?id={user.id}) 𝐒𝐨𝐫𝐦𝐚𝐦𝐢 𝐈̇𝐬𝐭𝐞𝐝𝐢𝐠̆𝐢𝐧 𝐒𝐨𝐫𝐮 𝐓𝐢𝐩𝐢𝐧𝐢 𝐒𝐞𝐜̧:"
         dogruluk_text = "Doğruluk"
         cesaret_text = "Cesaret"
@@ -60,7 +60,7 @@ def button(self, update):
 
 
     if query.data == "1":
-        if OYUNCU == user.id:
+        if OYUNCU == update.effective_user.id and OYUNCU == update.effective_chat.id:
             self.send_message(chat_id=chat.id,
                               text="ss")
             
