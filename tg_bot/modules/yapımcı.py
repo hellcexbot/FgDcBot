@@ -15,6 +15,7 @@ from tg_bot.__main__ import KOMUT_CHAT_İD_TEXT, KOMUT_CHAT_İD
 def sahip(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
     msg = update.effective_message  # type: Optional[Message]
+    user = update.effective_user
 
     KEYBOARDS = [[InlineKeyboardButton(text="Sahibim",
                                         url="t.me/fireganqq")]]
