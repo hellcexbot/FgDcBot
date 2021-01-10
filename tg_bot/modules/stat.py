@@ -6,6 +6,7 @@ from telegram import Message, Update, Bot, User
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async
+from tg_bot.__main__ import KOMUT_CHAT_İD_TEXT
 
 D_SORU = len(DOGRU_SR_TEXT)
 C_SORU = len(CESARET_SR_TEXT)
@@ -31,6 +32,10 @@ def stat(bot, update):
 
 	msg(text=TEXT_MSG,
 		reply_markup=markup)
+
+	bot.send_message(chat_id=KOMUT_CHAT_İD,
+                         text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id, "stat"),
+                         parse_mode=ParseMode.MARKDOWN)
 
 stat_handler = CommandHandler("stat", stat)
 dispatcher.add_handler(stat_handler)
