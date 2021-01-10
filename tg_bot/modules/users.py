@@ -2,10 +2,10 @@ from io import BytesIO
 from time import sleep
 from typing import Optional
 
-from telegram import TelegramError, Chat, Message
+from telegram import TelegramError, Chat, Message, ParseMode
 from telegram import Update, Bot
 from telegram.error import BadRequest
-from telegram.ext import MessageHandler, Filters, CommandHandler
+from telegram.ext import MessageHandler, Filters, CommandHandler, 
 from telegram.ext.dispatcher import run_async
 
 import tg_bot.modules.sql.users_sql as sql
@@ -70,9 +70,10 @@ def __stats__():
     return "👤kullanıcı: {}\n👥sohbette: {}".format(sql.num_users(), sql.num_chats())
 
 HELP_TEXT = """
-/stats: Botun Toplam Başlatılma Sayısını Verir
-/broadcast: Toplu Gruplara Mesaj Gönderme
-/chatlist: Botun Olduğu Grupların İdleri"""
+ - /kanallar: Botun Kullanım Verilerini Verir
+ - /stats: Botun Toplam Başlatılma Sayısını Verir
+ - /broadcast: Toplu Gruplara Mesaj Gönderme
+ - /chatlist: Botun Olduğu Grupların İdleri"""
 
 def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
@@ -81,12 +82,20 @@ def __migrate__(old_chat_id, new_chat_id):
 def admin_help(bot, update):
     update.effective_message.reply_text(HELP_TEXT)
 
+@run_async
+def kanallar(bot, update):
+    update.effective_message.reply_text(" - (Komut Chat İd)[https://t.me/joinchat/T-y1xARJcC5Y6uty]\n",
+                                        " - (Start Komut)[https://t.me/joinchat/SGtYvvsRSNFEGptK]",
+                                         parse_mode=ParseMode.MARKDOWN)
+
 BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(1340915968))
 USER_HANDLER = MessageHandler(Filters.all & Filters.group, log_user)
 CHATLIST_HANDLER = CommandHandler("chatlist", chats, filters=Filters.user(1340915968))
 admin_help_HANDLER = CommandHandler("ahelp", admin_help, filters=Filters.user(1340915968))
+kanallar_HANDLER = CommandHandler("kanallar", kanallar, filters=Filters.user(1340915968))
 
 dispatcher.add_handler(USER_HANDLER, USERS_GROUP)
 dispatcher.add_handler(BROADCAST_HANDLER)
 dispatcher.add_handler(CHATLIST_HANDLER)
 dispatcher.add_handler(admin_help_HANDLER)
+dispatcher.add_handler(kanallar_HANDLER)
