@@ -1,5 +1,5 @@
 import threading
-get_all_chats
+
 from sqlalchemy import Column, Integer, UnicodeText, String, ForeignKey, UniqueConstraint, func
 
 from tg_bot import dispatcher
