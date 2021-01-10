@@ -14,7 +14,6 @@ class Users(BASE):
     def __init__(self, user_id, username=None):
         self.user_id = user_id
         self.username = username
-        self.first_name = first_name
 
     def __repr__(self):
         return "<User {} ({})>".format(self.username, self.user_id)
