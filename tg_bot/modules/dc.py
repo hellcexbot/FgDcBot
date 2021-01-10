@@ -13,7 +13,7 @@ from telegram.ext.dispatcher import run_async
 OYUNCU = []
 
 @run_async
-def dc(self, bot, update):
+def dc(self, update):
     chat = update.effective_chat
     user = update.effective_user
     msg = update.effective_message  # type: Optional[Message]
@@ -33,7 +33,7 @@ def dc(self, bot, update):
                        reply_markup=MARKU_P)
 
     else:
-        self.OYUNCU.append(user.id)
+        #self.OYUNCU.append(user.id)
         text = f"[{user.first_name}](tg://user?id={user.id}) 𝐒𝐨𝐫𝐦𝐚𝐦𝐢 𝐈̇𝐬𝐭𝐞𝐝𝐢𝐠̆𝐢𝐧 𝐒𝐨𝐫𝐮 𝐓𝐢𝐩𝐢𝐧𝐢 𝐒𝐞𝐜̧:"
         dogruluk_text = "Doğruluk"
         cesaret_text = "Cesaret"
@@ -60,21 +60,21 @@ def button(bot, update):
 
 
     if query.data == "1":
-        if OYUNCU != user.id:
-            bot.send_message(chat_id=chat.id,
-                              text="ss")
+        #if OYUNCU != user.id:
+            #bot.send_message(chat_id=chat.id,
+            #                  text="ss")
             #return
-        else:
-            bot.send_message(chat_id=chat.id,
-                              text="ssadsasdsad")
+        #else:
+            #bot.send_message(chat_id=chat.id,
+            #                  text="ssadsasdsad")
             #return
-        #bot.delete_message(chat_id=chat.id,
-                           #message_id=msg.message_id)
-        #bot.send_message(chat_id=update.effective_chat.id,
-                         #text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐃𝐨𝐠̆𝐫𝐮𝐥𝐮𝐤 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
-                         #parse_mode=ParseMode.MARKDOWN)
-        #sleep(1)
-        #bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(DOGRU_SR_TEXT)}")
+        bot.delete_message(chat_id=chat.id,
+                           message_id=msg.message_id)
+        bot.send_message(chat_id=update.effective_chat.id,
+                         text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐃𝐨𝐠̆𝐫𝐮𝐥𝐮𝐤 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
+                         parse_mode=ParseMode.MARKDOWN)
+        sleep(1)
+        bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(DOGRU_SR_TEXT)}")
     if query.data == "2":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
