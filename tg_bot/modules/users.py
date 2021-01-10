@@ -66,9 +66,9 @@ def chats(bot: Bot, update: Update):
 
 @run_async
 def pms(bot: Bot, update: Update):
-	user = update.effective_user
     all_pms = sql.get_all_pms() or []
     pmfile = 'Kullanıcı listesi:\n\n'
+    user = update.effective_user
     for pm in all_pms:
         pmfile += "{} - [ @{} ] - ({})\n".format(pm.username, user.first_name, pm.user_id)
 
