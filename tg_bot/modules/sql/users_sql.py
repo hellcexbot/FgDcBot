@@ -1,9 +1,10 @@
 import threading
-
+get_all_chats
 from sqlalchemy import Column, Integer, UnicodeText, String, ForeignKey, UniqueConstraint, func
 
 from tg_bot import dispatcher
 from tg_bot.modules.sql import BASE, SESSION
+
 
 class Users(BASE):
     __tablename__ = "users"
@@ -129,6 +130,11 @@ def get_all_chats():
     finally:
         SESSION.close()
 
+def get_all_pms():
+    try:
+        return SESSION.query(Users).all()
+    finally:
+        SESSION.close()
 
 def get_user_num_chats(user_id):
     try:
