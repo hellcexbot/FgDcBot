@@ -41,19 +41,19 @@ KOMUT_CHAT_İD_TEXT = """
 """
 
 PM_START_TEXT = """
-Merhaba [{}](tg://user?id={})!
+**Merhaba [{}](tg://user?id={})!
 
 Herhangi bir hata veya sorunuz varsa Sahibim İle İletişime Gecmekden Cekinmeyin! 😊
 
 Ayrıca Yeni Özellikler, Kesinti Süresi Vb. için Duyuru Kanalıma Baka Bilirsin!! 😎
 
-Kullanılabilir komutların listesini /help ile bulabilirsiniz.
+Kullanılabilir komutların listesini /help ile bulabilirsiniz.**
 """
 
 HELP_STRINGS = """
-𝐒𝐞𝐥𝐚𝐦 [{}](tg://user?id={})!
+**Selam [{}](tg://user?id={})!**
 
-𝐊𝐨𝐦𝐮𝐭𝐥𝐚𝐫:
+**Komutlar:**
  - /start: botu başlat
  - /help: Size bu mesajı atar.
  - /dc: Size Doğruluk Veya Cesaret Sorusu Seçimi Yaptırı
@@ -62,7 +62,7 @@ HELP_STRINGS = """
  - /banket: Botla İlgili Anketleri Verir
  - /reklam: Bota Verilmiş Reklamlar
  
-‼️ /dc 𝐊𝐨𝐦𝐮𝐭𝐮 𝐏𝐦'𝐝𝐞 𝐂𝐚𝐥𝐢𝐬̧𝐦𝐚𝐳 :(
+**‼️ Oyun Komutu Pm'de Calışmaz :(**
 """
 
 IMPORTED = {}
