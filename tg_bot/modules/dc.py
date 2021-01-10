@@ -60,7 +60,7 @@ def button(self, update):
 
 
     if query.data == "1":
-        if OYUNCU != user.id:
+        if OYUNCU == user.id:
             self.send_message(chat_id=chat.id,
                               text="ss")
             
