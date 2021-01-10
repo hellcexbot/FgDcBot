@@ -33,7 +33,7 @@ def dc(self, update):
                        reply_markup=MARKU_P)
 
     else:
-        oyuncu2 = [user.id, chat.id]
+        oyuncu2 = [user.id]
         OYUNCU.append(oyuncu2)
         text = f"[{user.first_name}](tg://user?id={user.id}) 𝐒𝐨𝐫𝐦𝐚𝐦𝐢 𝐈̇𝐬𝐭𝐞𝐝𝐢𝐠̆𝐢𝐧 𝐒𝐨𝐫𝐮 𝐓𝐢𝐩𝐢𝐧𝐢 𝐒𝐞𝐜̧:"
         dogruluk_text = "Doğruluk"
@@ -77,13 +77,13 @@ def button(self, update):
         #sleep(1)
         #bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(DOGRU_SR_TEXT)}")
     if query.data == "2":
-        bot.delete_message(chat_id=chat.id,
+        self.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
-        bot.send_message(chat_id=update.effective_chat.id,
+        self.send_message(chat_id=update.effective_chat.id,
                          text=f"[{user.first_name}](tg://user?id={user.id}) 𝐈̇𝐜̧𝐢𝐧 𝐂𝐞𝐬𝐚𝐫𝐞𝐭 𝐒𝐨𝐫𝐮𝐬𝐮 𝐆𝐞𝐭𝐢𝐫𝐢𝐥𝐢𝐲𝐨𝐫...",
                          parse_mode=ParseMode.MARKDOWN)
         sleep(1)
-        bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
+        self.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
 
 dc_handler = CommandHandler("dc", dc)
 dc_dc_handler = CallbackQueryHandler(button)
