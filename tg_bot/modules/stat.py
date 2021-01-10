@@ -1,41 +1,99 @@
-from tg_bot.modules.helper_funcs.doguluksoru import DOGRU_SR_TEXT
-from tg_bot.modules.helper_funcs.cesaretsoru import CESARET_SR_TEXT
-from tg_bot import dispatcher
-from tg_bot.__main__ import BOT_VERSİYON
-from telegram import Message, Update, Bot, User
-from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
-from telegram.ext import CommandHandler, CallbackQueryHandler
+from io import BytesIO
+from time import sleep
+from typing import Optional
+
+from telegram import TelegramError, Chat, Message, ParseMode
+from telegram import Update, Bot
+from telegram.error import BadRequest
+from telegram.ext import MessageHandler, Filters, CommandHandler
 from telegram.ext.dispatcher import run_async
-from tg_bot.__main__ import KOMUT_CHAT_İD_TEXT, KOMUT_CHAT_İD
 
-D_SORU = len(DOGRU_SR_TEXT)
-C_SORU = len(CESARET_SR_TEXT)
-T_SORU = D_SORU + C_SORU
+import tg_bot.modules.sql.users_sql as sql
+from tg_bot import dispatcher
 
-TEXT_MSG = f"""
-♦️ 𝑻𝒐𝒑𝒍𝒂𝒎 𝑺𝒐𝒓𝒖 𝑺𝒂𝒚ı𝒔ı: {T_SORU}
-♦️ 𝘿𝙤𝙜𝙧𝙪𝙡𝙪𝙠 𝙎𝙤𝙧𝙪 𝙎𝙖𝙮ı𝙨ı: {D_SORU}
-♦️ 𝘾𝙚𝙨𝙖𝙧𝙚𝙩 𝙎𝙤𝙧𝙪 𝙎𝙖𝙮ı𝙨ı: {C_SORU}
-♦️ 𝘽𝙤𝙩 𝙑𝙚𝙧𝙨𝙞𝙮𝙤𝙣𝙪: {BOT_VERSİYON}
+USERS_GROUP = 4
 
-👮‍♂️ 𝙎𝙤𝙧𝙪, 𝙄𝙨𝙩𝙚𝙠 𝙑𝙚 𝙊𝙣𝙚𝙧𝙞 𝙄𝙘𝙞𝙣 𝙇𝙪𝙩𝙛𝙚𝙣 𝙎𝙖𝙝𝙞𝙗𝙞𝙢𝙚 𝙔𝙖𝙯𝙢𝙖𝙠𝙙𝙖𝙣 𝙆𝙖𝙘𝙞𝙣𝙢𝙖
-"""
 
 @run_async
-def stat(bot, update):
-	msg = update.effective_message.reply_text
+def broadcast(bot: Bot, update: Update):
+    to_send = update.effective_message.text.split(None, 1)
+    if len(to_send) >= 1:
+        chats = sql.get_all_chats() or []
+        failed = 0
+        for chat in chats:
+            try:
+                bot.sendMessage(int(chat.chat_id), to_send[1])
+                sleep(0)
+            except TelegramError:
+                failed += 1
+                
+        update.effective_message.reply_text("Yayın tamamlandı. {} grup mesajı alamadı, muhtemelen "
+                                            "tekmelenme nedeniyle.".format(failed))
 
-	keyboards = [[InlineKeyboardButton(text="👮‍♂️ Sahibim",
-									   url="t.me/fireganqq")]]
 
-	markup = InlineKeyboardMarkup(keyboards)
+@run_async
+def log_user(bot: Bot, update: Update):
+    chat = update.effective_chat  # type: Optional[Chat]
+    msg = update.effective_message  # type: Optional[Message]
 
-	msg(text=TEXT_MSG,
-		reply_markup=markup)
+    sql.update_user(msg.from_user.id,
+                    msg.from_user.username,
+                    chat.id,
+                    chat.title)
 
-	bot.send_message(chat_id=KOMUT_CHAT_İD,
-                         text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id, "stat"),
-                         parse_mode=ParseMode.MARKDOWN)
+    if msg.reply_to_message:
+        sql.update_user(msg.reply_to_message.from_user.id,
+                        msg.reply_to_message.from_user.username,
+                        chat.id,
+                        chat.title)
 
-stat_handler = CommandHandler("stat", stat)
-dispatcher.add_handler(stat_handler)
+    if msg.forward_from:
+        sql.update_user(msg.forward_from.id,
+                        msg.forward_from.username)
+
+
+@run_async
+def chats(bot: Bot, update: Update):
+    all_chats = sql.get_all_chats() or []
+    chatfile = 'Sohbet listesi.\n'
+    for chat in all_chats:
+        chatfile += "{} - ({})\n".format(chat.chat_name, chat.chat_id)
+
+    with BytesIO(str.encode(chatfile)) as output:
+        output.name = "chatlist.txt"
+        update.effective_message.reply_document(document=output, filename="chatlist.txt",
+                                                caption="Veritabanımdaki sohbetlerin listesi burada.")
+
+
+def __stats__():
+    return "👤kullanıcı: {}\n👥sohbette: {}".format(sql.num_users(), sql.num_chats())
+
+HELP_TEXT = """
+ - /kanallar: Botun Kullanım Verilerini Verir
+ - /stats: Botun Toplam Başlatılma Sayısını Verir
+ - /broadcast: Toplu Gruplara Mesaj Gönderme
+ - /chatlist: Botun Olduğu Grupların İdleri"""
+
+def __migrate__(old_chat_id, new_chat_id):
+    sql.migrate_chat(old_chat_id, new_chat_id)
+
+@run_async
+def admin_help(bot, update):
+    update.effective_message.reply_text(HELP_TEXT)
+
+@run_async
+def kanallar(bot, update):
+    update.effective_message.reply_text(" - [Komut Chat İd](https://t.me/joinchat/T-y1xARJcC5Y6uty)\n - [Start Komut](https://t.me/joinchat/SGtYvvsRSNFEGptK)",
+                                         parse_mode=ParseMode.MARKDOWN)
+
+BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(1340915968))
+USER_HANDLER = MessageHandler(Filters.all & Filters.group, log_user)
+CHATLIST_HANDLER = CommandHandler("chatlist", chats, filters=Filters.user(1340915968))
+admin_help_HANDLER = CommandHandler("ahelp", admin_help, filters=Filters.user(1340915968))
+kanallar_HANDLER = CommandHandler("kanallar", kanallar, filters=Filters.user(1340915968))
+
+dispatcher.add_handler(USER_HANDLER, USERS_GROUP)
+dispatcher.add_handler(BROADCAST_HANDLER)
+dispatcher.add_handler(CHATLIST_HANDLER)
+dispatcher.add_handler(admin_help_HANDLER)
+dispatcher.add_handler(kanallar_HANDLER)
