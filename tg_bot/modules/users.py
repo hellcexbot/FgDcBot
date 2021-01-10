@@ -5,7 +5,7 @@ from typing import Optional
 from telegram import TelegramError, Chat, Message, ParseMode
 from telegram import Update, Bot
 from telegram.error import BadRequest
-from telegram.ext import MessageHandler, Filters, CommandHandler, 
+from telegram.ext import MessageHandler, Filters, CommandHandler
 from telegram.ext.dispatcher import run_async
 
 import tg_bot.modules.sql.users_sql as sql
