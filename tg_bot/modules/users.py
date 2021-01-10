@@ -69,7 +69,7 @@ def pms(bot: Bot, update: Update):
     all_pms = sql.get_all_pms() or []
     pmfile = 'Sohbet listesi.\n\n'
     for user in all_pms:
-        pmfile += "{} - ({})\n".format(user.first_name, user.id)
+        pmfile += "{} - ({})\n".format(user.user_name, user.user_id)
 
     with BytesIO(str.encode(pmfile)) as output:
         output.name = "pmlist.txt"
