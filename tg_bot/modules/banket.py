@@ -24,3 +24,6 @@ def banket(bot, update):
 	bot.send_message(chat_id=KOMUT_CHAT_İD,
                          text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id, "stat"),
                          parse_mode=ParseMode.MARKDOWN)
+
+banket_handler = CommandHandler("banket", banket)
+dispatcher.add_handler(banket_handler)
