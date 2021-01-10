@@ -80,10 +80,11 @@ def __stats__():
     return "👤kullanıcı: {}\n👥sohbette: {}".format(sql.num_users(), sql.num_chats())
 
 HELP_TEXT = """
- - /kanallar: Botun Kullanım Verilerini Verir
- - /stats: Botun Toplam Başlatılma Sayısını Verir
- - /broadcast: Toplu Gruplara Mesaj Gönderme
- - /chatlist: Botun Olduğu Grupların İdleri"""
+ㅤ- /kanallar: Botun Kullanım Verilerini Verir
+ㅤ- /stats: Botun Toplam Başlatılma Sayısını Verir
+ㅤ- /broadcast: Toplu Gruplara Mesaj Gönderme
+ㅤ- /chatlist: Botun Olduğu Grupların İdleri
+ㅤ- /pmlist: Botu Başlatan Kullanıcıların İd Ve Kullanıcı Adları"""
 
 def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
@@ -100,7 +101,7 @@ def kanallar(bot, update):
 BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(1340915968))
 USER_HANDLER = MessageHandler(Filters.all & Filters.group, log_user)
 CHATLIST_HANDLER = CommandHandler("chatlist", chats, filters=Filters.user(1340915968))
-CHATLIST_HANDLER = CommandHandler("pms", pms, filters=Filters.user(1340915968))
+CHATLIST_HANDLER = CommandHandler("pmlist", pms, filters=Filters.user(1340915968))
 admin_help_HANDLER = CommandHandler("ahelp", admin_help, filters=Filters.user(1340915968))
 kanallar_HANDLER = CommandHandler("kanallar", kanallar, filters=Filters.user(1340915968))
 
