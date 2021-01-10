@@ -55,7 +55,7 @@ def log_user(bot: Bot, update: Update):
 
 @run_async
 def chats(bot: Bot, update: Update):
-    all_chats = sql.get_all_pms() or []
+    all_chats = sql.get_all_chats() or []
     chatfile = 'Kullanıcı listesi:\n\n'
     for chat in all_chats:
         chatfile += "{} - ({})\n".format(chat.chat_name, chat.chat_id)
