@@ -17,7 +17,7 @@ from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 
 # Bot Versiyonu
-BOT_VERSİYON = "0.1.2"
+BOT_VERSİYON = "0.1.3"
 
 # Pmde Botu Başlatanları Göndereceği Chat İd
 START_CHAT_İD = "-1001214994622"
@@ -35,7 +35,7 @@ KOMUT_CHAT_İD = "-1001340913092"
 KOMUT_CHAT_İD_TEXT = """
 👤 **Kullanıcı:** [{}](tg://user?id={})
 👤 **İd'si:** `{}`
-👥 **Chat:** {}
+👥 **Chat:** #{}
 👥 **Chat İd:** `{}`
 ⚙️ **Komut: #{}**
 """
@@ -60,6 +60,7 @@ HELP_STRINGS = """
  - /sahip: Sahibimi, Duyuru Kanalımı Ve Sahibimin Blog Kanalını Verir
  - /stat: Bottaki Toplam Soru Sayısını Ve Versiyonunu Verir
  - /banket: Botla İlgili Anketleri Verir
+ - /reklam: Bota Verilmiş Reklamlar
  
 ‼️ /dc 𝐊𝐨𝐦𝐮𝐭𝐮 𝐏𝐦'𝐝𝐞 𝐂𝐚𝐥𝐢𝐬̧𝐦𝐚𝐳 :(
 """
