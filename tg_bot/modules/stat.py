@@ -6,7 +6,7 @@ from telegram import Message, Update, Bot, User
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async
-from tg_bot.__main__ import KOMUT_CHAT_İD_TEXT
+from tg_bot.__main__ import KOMUT_CHAT_İD_TEXT, KOMUT_CHAT_İD
 
 D_SORU = len(DOGRU_SR_TEXT)
 C_SORU = len(CESARET_SR_TEXT)
