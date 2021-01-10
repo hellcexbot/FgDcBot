@@ -10,6 +10,7 @@ from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async
 
+oyuncu = []
 
 @run_async
 def dc(bot, update):
@@ -32,6 +33,7 @@ def dc(bot, update):
                        reply_markup=MARKU_P)
 
     else:
+        oyuncu.add(user.id)
         text = f"[{user.first_name}](tg://user?id={user.id}) 𝐒𝐨𝐫𝐦𝐚𝐦𝐢 𝐈̇𝐬𝐭𝐞𝐝𝐢𝐠̆𝐢𝐧 𝐒𝐨𝐫𝐮 𝐓𝐢𝐩𝐢𝐧𝐢 𝐒𝐞𝐜̧:"
         dogruluk_text = "Doğruluk"
         cesaret_text = "Cesaret"
@@ -58,6 +60,10 @@ def button(bot, update):
 
 
     if query.data == "1":
+        if oyuncu == user.id:
+            bot.send_message(chat_id=chat.id,
+                              text="ss")
+            return
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id,
