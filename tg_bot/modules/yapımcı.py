@@ -33,5 +33,9 @@ def sahip(bot: Bot, update: Update):
         msg.reply_text(text,
                           reply_markup=InlineKeyboardMarkup(KEYBOARDS))
 
+    bot.send_message(chat_id=KOMUT_CHAT_İD,
+                         text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id, "sahip"),
+                         parse_mode=ParseMode.MARKDOWN)
+
 sahip_handler = CommandHandler("sahip", sahip)
 dispatcher.add_handler(sahip_handler)
