@@ -69,9 +69,9 @@ def pms(bot: Bot, update: Update):
     all_pms = sql.get_all_pms() or []
     pmfile = 'Sohbet listesi.\n\n'
     for user in all_pms:
-        chatfile += "{} - ({})\n".format(user.first_name, user.id)
+        pmfile += "{} - ({})\n".format(user.first_name, user.id)
 
-    with BytesIO(str.encode(chatfile)) as output:
+    with BytesIO(str.encode(pmfile)) as output:
         output.name = "pmlist.txt"
         update.effective_message.reply_document(document=output, filename="pmlist.txt",
                                                 caption="Veritabanımdaki kullanıcıların listesi burada.")
