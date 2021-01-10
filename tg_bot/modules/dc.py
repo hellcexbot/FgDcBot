@@ -33,7 +33,8 @@ def dc(bot, update):
                        reply_markup=MARKU_P)
 
     else:
-        oyuncu.extend(chat.id, user.id)
+        oyuncu2 = [chat.id, user.id]
+        oyuncu.extend(oyuncu2)
         text = f"[{user.first_name}](tg://user?id={user.id}) 𝐒𝐨𝐫𝐦𝐚𝐦𝐢 𝐈̇𝐬𝐭𝐞𝐝𝐢𝐠̆𝐢𝐧 𝐒𝐨𝐫𝐮 𝐓𝐢𝐩𝐢𝐧𝐢 𝐒𝐞𝐜̧:"
         dogruluk_text = "Doğruluk"
         cesaret_text = "Cesaret"
