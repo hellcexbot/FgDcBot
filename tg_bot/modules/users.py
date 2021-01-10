@@ -26,8 +26,7 @@ def broadcast(bot: Bot, update: Update):
                 sleep(0)
             except TelegramError:
                 failed += 1
-                LOGGER.warning("%s grubuna yayın gönderilemedi, grup adı %s", str(chat.chat_id), str(chat.chat_name))
-
+                
         update.effective_message.reply_text("Yayın tamamlandı. {} grup mesajı alamadı, muhtemelen "
                                             "tekmelenme nedeniyle.".format(failed))
 
