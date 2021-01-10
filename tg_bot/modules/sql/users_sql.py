@@ -11,10 +11,9 @@ class Users(BASE):
     user_id = Column(Integer, primary_key=True)
     username = Column(UnicodeText)
 
-    def __init__(self, firstname, user_id, username=None):
+    def __init__(self, user_id, username=None):
         self.user_id = user_id
         self.username = username
-        self.firstname = firstname
     def __repr__(self):
         return "<User {} ({})>".format(self.username, self.user_id)
 
