@@ -9,6 +9,7 @@ from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, Cha
 from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
+from tg_bot.__main__ import KOMUT_CHAT_İD_TEXT
 
 @run_async
 def sahip(bot: Bot, update: Update):
