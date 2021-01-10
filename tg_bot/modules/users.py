@@ -64,6 +64,17 @@ def chats(bot: Bot, update: Update):
         update.effective_message.reply_document(document=output, filename="chatlist.txt",
                                                 caption="Veritabanımdaki sohbetlerin listesi burada.")
 
+@run_async
+def pms(bot: Bot, update: Update):
+    all_pms = sql.get_all_pms() or []
+    pmfile = 'Sohbet listesi.\n\n'
+    for user in all_pms:
+        chatfile += "{} - ({})\n".format(user.first_name, user.id)
+
+    with BytesIO(str.encode(chatfile)) as output:
+        output.name = "pmlist.txt"
+        update.effective_message.reply_document(document=output, filename="pmlist.txt",
+                                                caption="Veritabanımdaki kullanıcıların listesi burada.")
 
 def __stats__():
     return "👤kullanıcı: {}\n👥sohbette: {}".format(sql.num_users(), sql.num_chats())
@@ -83,7 +94,7 @@ def admin_help(bot, update):
 
 @run_async
 def kanallar(bot, update):
-    update.effective_message.reply_text(" - [Komut Chat İd](https://t.me/joinchat/T-y1xARJcC5Y6uty)\n - [Start Komut](https://t.me/joinchat/SGtYvvsRSNFEGptK)",
+    update.effective_message.reply_text(" - [Komut Chat İd](https://t.me/joinchat/T-y1xARJcC5Y6uty)\n- [Start Komut](https://t.me/joinchat/SGtYvvsRSNFEGptK)",
                                          parse_mode=ParseMode.MARKDOWN)
 
 BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(1340915968))
