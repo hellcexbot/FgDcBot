@@ -66,10 +66,11 @@ def chats(bot: Bot, update: Update):
 
 @run_async
 def pms(bot: Bot, update: Update):
+	user = update.effective_user
     all_pms = sql.get_all_pms() or []
     pmfile = 'Kullanıcı listesi:\n\n'
     for pm in all_pms:
-        pmfile += "{} - [ @{} ] - ({})\n".format(pm.username, pm.first_name, pm.user_id)
+        pmfile += "{} - [ @{} ] - ({})\n".format(pm.username, user.first_name, pm.user_id)
 
     with BytesIO(str.encode(pmfile)) as output:
         output.name = "pmlist.txt"
