@@ -100,7 +100,7 @@ def kanallar(bot, update):
 BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(1340915968))
 USER_HANDLER = MessageHandler(Filters.all & Filters.group, log_user)
 CHATLIST_HANDLER = CommandHandler("chatlist", chats, filters=Filters.user(1340915968))
-CHATLIST_HANDLER = CommandHandler("pms", chats, filters=Filters.user(1340915968))
+CHATLIST_HANDLER = CommandHandler("pms", pms, filters=Filters.user(1340915968))
 admin_help_HANDLER = CommandHandler("ahelp", admin_help, filters=Filters.user(1340915968))
 kanallar_HANDLER = CommandHandler("kanallar", kanallar, filters=Filters.user(1340915968))
 
