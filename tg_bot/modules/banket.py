@@ -3,6 +3,7 @@ from telegram import Message, Update, Bot, User
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
 from telegram.ext.dispatcher import run_async
 from tg_bot.__main__ import KOMUT_CHAT_İD_TEXT, KOMUT_CHAT_İD
+from telegram.ext import CommandHandler, CallbackQueryHandler
 
 @run_async
 def banket(bot, update):
