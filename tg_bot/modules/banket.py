@@ -13,10 +13,10 @@ def banket(bot, update):
 
 	keyboards = [[InlineKeyboardButton(text="📊 Anket 1",
 										url="https://t.me/fireqanQBotlari/13")]]
-
+"""
 	keyboards += [[InlineKeyboardButton(text="📊 Anket 2",
 										url="https://t.me/fireqanQBotlari/14")]]
-
+"""
 	markup = InlineKeyboardMarkup(keyboards)
 
 	msg("⭕️ Aktif Botla İlgili Anketler 🔽",
