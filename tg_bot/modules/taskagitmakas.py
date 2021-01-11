@@ -40,10 +40,10 @@ def dc(bot, update):
                         reply_markup=InlineKeyboardMarkup([
                                         [InlineKeyboardButton(text=dogruluk_text,
                                                                 message_id=msg.message_id,
-                                                                callback_data="1")],
+                                                                callback_data="3")],
                                         [InlineKeyboardButton(text=cesaret_text,
                                                                 message_id=msg.message_id,
-                                                                callback_data="2")]]))
+                                                                callback_data="4")]]))
     bot.send_message(chat_id=KOMUT_CHAT_İD,
                          text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id, "dc"),
                          parse_mode=ParseMode.MARKDOWN)
@@ -56,7 +56,7 @@ def button(bot, update):
 
 
 
-    if query.data == "1":
+    if query.data == "3":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id,
@@ -64,7 +64,7 @@ def button(bot, update):
                          parse_mode=ParseMode.MARKDOWN)
         sleep(1)
         bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(DOGRU_SR_TEXT)}")
-    if query.data == "2":
+    if query.data == "4":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id,
