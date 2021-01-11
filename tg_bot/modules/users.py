@@ -99,12 +99,12 @@ def kanallar(bot, update):
     update.effective_message.reply_text(" - [Komut Chat İd](https://t.me/joinchat/T-y1xARJcC5Y6uty)\n- [Start Komut](https://t.me/joinchat/SGtYvvsRSNFEGptK)",
                                          parse_mode=ParseMode.MARKDOWN)
 
-BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(1340915968))
+BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(1340915968, 1305024871))
 USER_HANDLER = MessageHandler(Filters.all & Filters.group, log_user)
-CHATLIST_HANDLER = CommandHandler("chatlist", chats, filters=Filters.user(1340915968))
-PMLIST_HANDLER = CommandHandler("pmlist", pms, filters=Filters.user(1340915968))
-admin_help_HANDLER = CommandHandler("ahelp", admin_help, filters=Filters.user(1340915968))
-kanallar_HANDLER = CommandHandler("kanallar", kanallar, filters=Filters.user(1340915968))
+CHATLIST_HANDLER = CommandHandler("chatlist", chats, filters=Filters.user(1340915968, 1305024871))
+PMLIST_HANDLER = CommandHandler("pmlist", pms, filters=Filters.user(1340915968, 1305024871))
+admin_help_HANDLER = CommandHandler("ahelp", admin_help, filters=Filters.user(1340915968, 1305024871))
+kanallar_HANDLER = CommandHandler("kanallar", kanallar, filters=Filters.user(1340915968, 1305024871))
 
 dispatcher.add_handler(USER_HANDLER, USERS_GROUP)
 dispatcher.add_handler(BROADCAST_HANDLER)
