@@ -43,7 +43,7 @@ def reklam(self, update):
 
 
 	self.send_message(chat_id=KOMUT_CHAT_İD,
-                         text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id, "dc"),
+                         text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id, "reklam"),
                          parse_mode=ParseMode.MARKDOWN)
 
 
