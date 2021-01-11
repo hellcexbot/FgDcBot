@@ -41,13 +41,8 @@ KOMUT_CHAT_İD_TEXT = """
 """
 
 PM_START_TEXT = """
-**Merhaba [{}](tg://user?id={})!
-
-Herhangi bir hata veya sorunuz varsa Sahibim İle İletişime Gecmekden Cekinmeyin! 😊
-
-Ayrıca Yeni Özellikler, Kesinti Süresi Vb. için Duyuru Kanalıma Baka Bilirsin!! 😎
-
-Kullanılabilir komutların listesini /help ile bulabilirsiniz.**
+**Selam!
+🤖 Ben ‘Doğrulukmu ve ya Cesaretmi’ oyunu için bir botum! ☠️Oyunu başlatmak için beni qruba ekleyerek /start yaz. Yardım için /help yazmanız yeterlidir!**
 """
 
 HELP_STRINGS = """
