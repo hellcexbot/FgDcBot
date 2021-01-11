@@ -73,7 +73,7 @@ def button(bot, update):
         sleep(1)
         bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
 
-dc_handler = CommandHandler("dc", dc)
+dc_handler = CommandHandler("asd", dc)
 dc_dc_handler = CallbackQueryHandler(button)
 dispatcher.add_handler(dc_handler)
 dispatcher.add_handler(dc_dc_handler)
