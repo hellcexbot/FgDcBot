@@ -20,7 +20,7 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 BOT_VERSİYON = "0.1.3"
 
 # Pmde Botu Başlatanları Göndereceği Chat İd
-START_CHAT_İD = "-1001214994622"
+START_CHAT_İD = "-1001415745495"
 
 # START_CHAT_İD TEXT
 START_CHAT_İD_TEXT = """
@@ -29,7 +29,7 @@ START_CHAT_İD_TEXT = """
 """
 
 # Hangi Grupda Hangi Kim Hangi Komutu Kullandı
-KOMUT_CHAT_İD = "-1001340913092"
+KOMUT_CHAT_İD = "-1001362147031"
 
 # KOMUT_CHAT_İD TEXT
 KOMUT_CHAT_İD_TEXT = """
