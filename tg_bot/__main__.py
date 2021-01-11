@@ -135,11 +135,11 @@ def start(bot: Bot, update: Update):
                                            [InlineKeyboardButton(text="📢 Duyuru Kanalım",
                                                                  url="t.me/fireqanQBotlari")],
                                            [InlineKeyboardButton(text="🤖 Beni Gruba Ekle",
-                                                                 url="tg://resolve?domain=FgDc_Bot&startgroup=a")],
+                                                                 url="tg://resolve?domain=TRDogrulukCesaret_BOT&startgroup=a")],
                                            [InlineKeyboardButton(text="🍾 Oyun Grubumuz",
                                                                  url="t.me/FgDcBotGrup")],
                                            [InlineKeyboardButton(text="👮‍♂️ Sahibim",
-                                                                 url="t.me/fireganqq")]]))
+                                                                 url="t.me/intiqam")]]))
 
 @run_async
 def get_help(bot: Bot, update: Update):
