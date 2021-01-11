@@ -40,10 +40,10 @@ def dc(bot, update):
                         reply_markup=InlineKeyboardMarkup([
                                         [InlineKeyboardButton(text=dogruluk_text,
                                                                 message_id=msg.message_id,
-                                                                callback_data="sa")],
+                                                                callback_data="1")],
                                         [InlineKeyboardButton(text=cesaret_text,
                                                                 message_id=msg.message_id,
-                                                                callback_data="as")]]))
+                                                                callback_data="2")]]))
     bot.send_message(chat_id=KOMUT_CHAT_İD,
                          text=KOMUT_CHAT_İD_TEXT.format(user.first_name, user.id, user.id, chat.title, chat.id, "dc"),
                          parse_mode=ParseMode.MARKDOWN)
@@ -54,10 +54,9 @@ def button(bot, update):
     user = update.effective_user
     chat = update.effective_chat
 
-    query.answer()
 
 
-    if query.data == "sa":
+    if query.data == "1":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id,
@@ -65,7 +64,7 @@ def button(bot, update):
                          parse_mode=ParseMode.MARKDOWN)
         sleep(1)
         bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(DOGRU_SR_TEXT)}")
-    if query.data == "as":
+    if query.data == "2":
         bot.delete_message(chat_id=chat.id,
                            message_id=msg.message_id)
         bot.send_message(chat_id=update.effective_chat.id,
@@ -74,7 +73,7 @@ def button(bot, update):
         sleep(1)
         bot.send_message(chat_id=update.effective_chat.id, text=f"{random.choice(CESARET_SR_TEXT)}")
 
-dc_handler = CommandHandler("asd", dc)
+dc_handler = CommandHandler("dc", dc)
 dc_dc_handler = CallbackQueryHandler(button)
 dispatcher.add_handler(dc_handler)
 dispatcher.add_handler(dc_dc_handler)
