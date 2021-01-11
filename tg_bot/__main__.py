@@ -132,12 +132,8 @@ def start(bot: Bot, update: Update):
     msg.reply_text(text=PM_START_TEXT.format(user.first_name, user.id),
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=InlineKeyboardMarkup([
-                                           [InlineKeyboardButton(text="📢 Duyuru Kanalım",
-                                                                 url="t.me/fireqanQBotlari")],
                                            [InlineKeyboardButton(text="🤖 Beni Gruba Ekle",
                                                                  url="tg://resolve?domain=TRDogrulukCesaret_BOT&startgroup=a")],
-                                           [InlineKeyboardButton(text="🍾 Oyun Grubumuz",
-                                                                 url="t.me/FgDcBotGrup")],
                                            [InlineKeyboardButton(text="👮‍♂️ Sahibim",
                                                                  url="t.me/intiqam")]]))
 
