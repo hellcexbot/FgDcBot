@@ -18,13 +18,13 @@ def sahip(bot: Bot, update: Update):
     user = update.effective_user
 
     KEYBOARDS = [[InlineKeyboardButton(text="Sahibim",
-                                        url="t.me/fireganqq")]]
+                                        url="t.mr/intiqam")]]
     
     KEYBOARDS += [[InlineKeyboardButton(text="Duyuru Kanalım",
-                                         url="t.me/fireqanqbotlari")]]
+                                         url="t.me/AzeBots")]]
 
     KEYBOARDS += [[InlineKeyboardButton(text="Sahibimin Blog Kanalı",
-                                        url="t.me/fireganqblog")]]
+                                        url="t.me/intiqams")]]
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
         text = "Sahibim, Sahibimin Kanalları Ve Güncelleme V.b. Duyuru Kanallıma Aşağıdaki Butonlardan Ulaşa Bilirsiniz:)"
