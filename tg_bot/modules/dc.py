@@ -22,7 +22,7 @@ def dc(bot, update):
 
         text += "\n\n♦️ **Yeni Özelliğimizi Sevmediyseniz Botu Geliştirmemiz İçin Alttaki Button dan Oylamaya Katıla Bilirsin!**"
         KEYBOARD_S = [[InlineKeyboardButton(text="🤖 Beni Gruba Ekle",
-                                             url="tg://resolve?domain=FgDc_Bot&startgroup=a")]]
+                                             url="tg://resolve?domain=TRDogrulukCesaret_BOT&startgroup=a")]]
         KEYBOARD_S += [[InlineKeyboardButton(text="📊 Oylamaya Katılmak İçin Tıkla",
                                               url="https://t.me/fireqanQBotlari/13")]]
 
